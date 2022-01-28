@@ -13,3 +13,43 @@ MonoBehaviour:
   m_Name: Lisa
   m_EditorClassIdentifier: 
   HasUnlocked: 0
+  Level: 1
+  SkillLevel: 1
+  CardRarity: 2
+  CardFaction: 0
+  Health: 0
+  Armour: 0
+  MagicResist: 0
+  HealthGrowth: 0
+  ArmourGrowth: 0
+  MagicResistGrowth: 0
+  UltimateGauge: 0
+  CurrentUltimateGauge: 0
+  Skills:
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
