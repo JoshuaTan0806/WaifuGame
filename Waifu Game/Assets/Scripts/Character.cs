@@ -10,45 +10,34 @@ public class Character : ScriptableObject
     public static int MaxSkillLevel = 5;
 
     [Header("Player Unlocks")]
-    public bool HasUnlocked;
     public int Level = 1;
-    public int SkillLevel = 1;
+    public int SkillLevel = 0;
 
     [Header("Stats")]
     public Rarity CardRarity;
-    public enum Rarity
-    {
-        Common,
-        Rare,
-        SuperRare
-    }
-
     public Faction CardFaction;
     
 
     public float Health;
-    public float Armour;
-    public float MagicResist;
+    [Range(0,1)] public float Armour;
+    [Range(0,1)] public float MagicResist;
 
     public float HealthGrowth;
-    public float ArmourGrowth;
-    public float MagicResistGrowth;
-
-    public float UltimateGauge;
-    public float CurrentUltimateGauge;
 
     [Header("Skills")]
     public Skill[] Skills = new Skill[3];
 
+    public float UltimateGauge;
+    public float CurrentUltimateGauge;
+    public Skill Ultimate;
+
     [System.Serializable]
     public class Skill
     {
-        public bool IsUltimate;
-        public bool IsMultiAttack;
-
         public float Cooldown;
         public float CurrentCooldown;
 
+        public bool IsMultiAttack;
         public float Damage;
         public float Accuracy;
         public float CriticalStrikeChance;
@@ -56,4 +45,25 @@ public class Character : ScriptableObject
 
         public float DamageGrowth;
     }
+
+    public void StartCombat()
+    {
+        ResetSkills();
+    }
+
+    void ResetSkills()
+    {
+        for (int i = 0; i < Skills.Length; i++)
+        {
+            Skills[i].CurrentCooldown = 0;
+        }
+
+        CurrentUltimateGauge = 0;
+    }
+
+    public void GainUltimateGauge()
+    {
+
+    }
+
 }

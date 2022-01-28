@@ -8,6 +8,13 @@ public enum Faction
     Dark
 }
 
+public enum Rarity
+{
+    Common,
+    Rare,
+    SuperRare
+}
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;

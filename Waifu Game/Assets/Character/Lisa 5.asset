@@ -10,20 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
-  m_Name: Lisa
+  m_Name: Lisa 5
   m_EditorClassIdentifier: 
-  HasUnlocked: 0
   Level: 1
-  SkillLevel: 1
+  SkillLevel: 0
   CardRarity: 2
-  CardFaction: 0
-  Health: 0
-  Armour: 0
-  MagicResist: 0
-  HealthGrowth: 0
-  ArmourGrowth: 0
-  MagicResistGrowth: 0
-  UltimateGauge: 0
+  CardFaction: 1
+  Health: 100
+  Armour: 0.1
+  MagicResist: 0.1
+  HealthGrowth: 5
+  UltimateGauge: 5
   CurrentUltimateGauge: 0
   Skills:
   - IsUltimate: 0
