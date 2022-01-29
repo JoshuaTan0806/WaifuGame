@@ -60,6 +60,18 @@ public class GameManager : MonoBehaviour
         SaveGame();
     }
 
+    [ContextMenu("Reset Game")]
+    public void ResetGame()
+    {
+        PlayerPrefs.DeleteAll();
+
+        for (int i = 0; i < everyCharacter.Count; i++)
+        {
+            everyCharacter[i].Level = 1;
+            everyCharacter[i].SkillLevel = 0;
+        }
+    }
+
     public void SaveGame()
     {
         File.WriteAllText("PlayerData", "");
