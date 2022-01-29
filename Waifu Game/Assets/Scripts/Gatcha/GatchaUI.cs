@@ -5,14 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[Serializable]
-public struct VisualCard
-{
-    public GameObject parent;
-    public Image backGround;
-    public Image splashArt;
-    public TextMeshProUGUI titleTxt;
-}
+
 
 public class GatchaUI : MonoBehaviour
 {
@@ -29,7 +22,7 @@ public class GatchaUI : MonoBehaviour
 
     [Space]
 
-    [SerializeField] VisualCard unlockPreview;
+    [SerializeField] PreviewCard unlockPreview;
 
     private void Start()
     {
@@ -69,9 +62,7 @@ public class GatchaUI : MonoBehaviour
             yield break;
 
         unlockPreview.parent.SetActive(true);
-        unlockPreview.splashArt.sprite = unlocked?.SplashArt;
-        unlockPreview.titleTxt.SetText(unlocked.Name);
-        unlockPreview.backGround.sprite = unlocked?.SplashBackground;
+        unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name);
 
         float elapsed = 0;
         float speed = .5f;
