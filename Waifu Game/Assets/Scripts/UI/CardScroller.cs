@@ -17,6 +17,8 @@ public class CardScroller : MonoBehaviour
         animator = card.GetComponent<Animator>();
 
         timeSinceLast = Random.Range(showCardDelayRange.x, showCardDelayRange.y)/2;
+
+        MainViewUI.instance.OnViewChange += () => card.transform.position = new Vector3(0, 400, 0);
     }
 
     private void Update()
@@ -42,4 +44,5 @@ public class CardScroller : MonoBehaviour
         //Animate the card
         animator.SetTrigger("Preview");
     }
+
 }

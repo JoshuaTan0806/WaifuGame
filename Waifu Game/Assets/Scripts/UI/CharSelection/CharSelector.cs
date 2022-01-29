@@ -53,6 +53,7 @@ public class CharSelector : MonoBehaviour
                     ForceAddSlot(toAdd, s);
 
                     //Set the cardpreview to be selected
+                    FindCard(toAdd, true);
 
                     return;
                 }
@@ -70,13 +71,15 @@ public class CharSelector : MonoBehaviour
 
     public void RemoveSlot(CharSlot s)
     {
+        //Turn off the selected image
+        if (s.charInSlot)
+            FindCard(s.charInSlot, false);
+
         s.charInSlot = null;
         s.image.sprite = s.defaultSprite;
 
         //Move all the other slots down
         MoveSlotsDown(s);
-
-        //Tell the cardPreview to not be selectedAnymore
     }
 
     private void MoveSlotsDown(CharSlot s)
@@ -112,6 +115,25 @@ public class CharSelector : MonoBehaviour
             }
             
             i++;
+        }
+    }
+
+
+    CharacterDisplayer cd;
+    void FindCard(Character c, bool selected)
+    {
+        if (!cd)
+            cd = GetComponent<CharacterDisplayer>();
+
+        foreach (Transform t in cd.cardHolder)
+        {
+            PreviewCard pc = t.GetComponent<PreviewCard>();
+
+            if (pc)
+                if (pc.titleTxt.text == c.Name
+                    && pc.backGround.sprite == c.SplashBackground
+                    && pc.splashArt.sprite == c.SplashArt)
+                    pc.selectedImage.gameObject.SetActive(selected);
         }
     }
 }

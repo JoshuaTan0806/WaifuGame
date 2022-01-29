@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CharacterDisplayer : MonoBehaviour
 {
-    [SerializeField] Transform cardHolder;
+    public Transform cardHolder;
     [SerializeField] PreviewCard cardPreviewPrefab;
 
     [Space]
