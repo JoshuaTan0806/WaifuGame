@@ -70,6 +70,8 @@ public class GameManager : MonoBehaviour
             everyCharacter[i].Level = 1;
             everyCharacter[i].SkillLevel = 0;
         }
+
+        SaveGame();
     }
 
     public void SaveGame()
