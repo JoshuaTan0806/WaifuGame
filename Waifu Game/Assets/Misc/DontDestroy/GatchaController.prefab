@@ -48,10 +48,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
   - {fileID: 11400000, guid: 508a010911b506d43954177e778d91ae, type: 2}
   - {fileID: 11400000, guid: 3abdaec9da0efb043b65aa1533119ffb, type: 2}
+  - {fileID: 11400000, guid: 60ecc72aa13cfb04284679a22a97d70c, type: 2}
+  - {fileID: 11400000, guid: 915570613e70f8c4d84d90740b893ab1, type: 2}
+  - {fileID: 11400000, guid: 0c8bb799345331046b0963592ead57b8, type: 2}
   darkCharacters:
   - {fileID: 11400000, guid: dccb487ac6a053142b43a3daf3e61027, type: 2}
   - {fileID: 11400000, guid: ef42ed0e031b3ba48a92d50cee1d4f3f, type: 2}
   - {fileID: 11400000, guid: ea236478ff493c342bee983439c914c7, type: 2}
+  - {fileID: 11400000, guid: 8a10c8eec0cd35b4f9c3a98f9db8051b, type: 2}
+  - {fileID: 11400000, guid: 8a32756e01cfa7549b30f2ef28f85b0a, type: 2}
+  - {fileID: 11400000, guid: c6419afc4c1b192498aabbd036aebbc3, type: 2}
   commonChance: 75
   rareChance: 20
   superRareChance: 5
