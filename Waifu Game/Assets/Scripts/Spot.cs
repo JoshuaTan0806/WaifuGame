@@ -53,5 +53,15 @@ public class Spot : MonoBehaviour
             CurrentHealth.fillAmount = 0;
             ActionSpeedTimer.fillAmount = 0;
         }
+
+        if(!Ally && character != null)
+        {
+            character.UseUltimate();
+
+            for (int i = character.Skills.Length - 1; i >= 0; i--)
+            {
+                character.UseSkill(i);
+            }
+        }
     }
 }
