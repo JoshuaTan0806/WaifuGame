@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 7234966680082899511, guid: e91e73faddac3124cbb05c29e07dde44, type: 3}
       propertyPath: cardTemplate
       value: 
-      objectReference: {fileID: 8480091796386104205, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
+      objectReference: {fileID: 8158593119993493520, guid: bbf46131600e55e439a25064a32af29d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e91e73faddac3124cbb05c29e07dde44, type: 3}
 --- !u!1 &1847811802
