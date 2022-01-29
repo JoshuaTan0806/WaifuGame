@@ -22,6 +22,8 @@ public class GatchaUI : MonoBehaviour
 
     [SerializeField] Button backButton;
 
+    [SerializeField] GameObject notificationObj;
+
     [Space]
 
     [SerializeField] PreviewCard unlockPreview;
@@ -34,7 +36,7 @@ public class GatchaUI : MonoBehaviour
     {
         rollGatchaButton.onClick.AddListener(RollGatcha);
 
-        backButton.onClick.AddListener(() => 
+        backButton.onClick.AddListener(() =>
         {
             MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject);
             BackGroundCanvas.instance.SetActive(true);
@@ -42,18 +44,15 @@ public class GatchaUI : MonoBehaviour
 
         currencyText.text = GameManager.instance.currency.ToString();
 
-//#if !UNITY_EDITOR
-//        Destroy(getCoinsButton.gameObject);
-//#else
-        getCoinsButton.onClick.AddListener(() => GameManager.instance.currency += 100);
-//#endif
+        if (getCoinsButton)
+            getCoinsButton.onClick.AddListener(() => GameManager.instance.currency += 100);
     }
 
     private void OnEnable()
     {
         HideCardPreview();
 
-        if(GameManager.instance)
+        if (GameManager.instance)
             currencyText.text = GameManager.instance.currency.ToString();
     }
     private void OnDisable()
@@ -64,9 +63,11 @@ public class GatchaUI : MonoBehaviour
     {
         HideCardPreview();
 
-        if(GameManager.instance.currency - GatchaController.instance.rollGatchaCost < 0)
+        if (GameManager.instance.currency - GatchaController.instance.rollGatchaCost < 0)
         {
             //Cannot afford rolling
+            notificationObj.SetActive(true);
+            StartCoroutine(DisableAfterDelay());
 
             return;
         }
@@ -105,7 +106,7 @@ public class GatchaUI : MonoBehaviour
         float elapsed = 0;
         float speed = .5f;
 
-        while(elapsed < 2)
+        while (elapsed < 2)
         {
             unlockPreview.parent.transform.localScale += new Vector3(speed * Time.deltaTime, speed * Time.deltaTime, speed * Time.deltaTime);
 
@@ -124,5 +125,12 @@ public class GatchaUI : MonoBehaviour
     {
         unlockPreview.parent.SetActive(false);
         unlockPreview.parent.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+    }
+
+    IEnumerator DisableAfterDelay()
+    {
+        yield return new WaitForSeconds(2);
+
+        notificationObj.SetActive(false);
     }
 }
