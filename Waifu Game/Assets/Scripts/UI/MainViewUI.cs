@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,6 +23,7 @@ public class MainViewUI : MonoBehaviour
 
     GameObject currentView;
 
+    public event Action OnViewChange;
 
     public static MainViewUI instance;
     private void Awake()
@@ -48,5 +50,7 @@ public class MainViewUI : MonoBehaviour
         newView.SetActive(true);
 
         currentView = newView;
+
+        OnViewChange?.Invoke();
     }
 }

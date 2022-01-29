@@ -11,6 +11,10 @@ public class PreviewCard : MonoBehaviour
     public Image splashArt;
     public TextMeshProUGUI titleTxt;
 
+    [Space]
+
+    public Image selectedImage;
+
     public void SetCard(Sprite BackGround, Sprite SplashArt, string title)
     {
         backGround.sprite = BackGround;

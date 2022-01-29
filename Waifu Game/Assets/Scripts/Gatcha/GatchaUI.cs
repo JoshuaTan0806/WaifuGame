@@ -53,6 +53,7 @@ public class GatchaUI : MonoBehaviour
         StartCoroutine(RollAfterDelay(3));
 
         backButton.gameObject.SetActive(false);
+        rollGatchaButton.gameObject.SetActive(false);
     }
     IEnumerator RollAfterDelay(float waitSeconds)
     {
@@ -88,6 +89,7 @@ public class GatchaUI : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         backButton.gameObject.SetActive(true);
+        rollGatchaButton.gameObject.SetActive(true);
     }
 
     void HideCardPreview()

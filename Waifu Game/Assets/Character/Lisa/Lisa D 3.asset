@@ -10,49 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
-  m_Name: Valkyrie 4
+  m_Name: Lisa D 3
   m_EditorClassIdentifier: 
   Level: 1
   SkillLevel: 0
-  Name: Valkyrie
+  Name: Lisa
   ChibiArt: {fileID: 0}
-  SplashArt: {fileID: 21300000, guid: 4b05a68495a78184e9fd31bd363def3b, type: 3}
-  SplashBackground: {fileID: 0}
-  CardRarity: 2
-  CardFaction: 0
+  SplashArt: {fileID: 21300000, guid: 44aa442a72623b0428ab87391e955183, type: 3}
+  SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
+  CardRarity: 0
+  CardFaction: 1
   Health: 100
-  CurrentHealth: 0
+  CurrentHealth: 100
   ActionSpeed: 3
-  CurrentActionSpeed: 50.289383
-  Armour: 0.1
-  MagicResist: 0.1
+  CurrentActionSpeed: 51.127174
   HealthGrowth: 5
   Skills:
-  - Cooldown: 5
-    CurrentCooldown: 13.906232
+  - Cooldown: 0
+    CurrentCooldown: 99.3931
     IsMultiAttack: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
+    MaxDamage: 2
+    MinDamage: 5
+    Accuracy: 0.95
+    CriticalStrikeChance: 0.3
+    CriticalStrikeMultiplier: 1.2
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 5
-    CurrentCooldown: 13.906232
+    CurrentCooldown: 51.127174
     IsMultiAttack: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
+    MaxDamage: 2
+    MinDamage: 5
+    Accuracy: 0.95
+    CriticalStrikeChance: 0.2
+    CriticalStrikeMultiplier: 1.5
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 5
-    CurrentCooldown: 13.906232
-    IsMultiAttack: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
+    CurrentCooldown: 77.98889
+    IsMultiAttack: 1
+    MaxDamage: 2
+    MinDamage: 3
+    Accuracy: 0.5
+    CriticalStrikeChance: 0.8
+    CriticalStrikeMultiplier: 1.2
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   UltimateGauge: 5
@@ -60,10 +61,11 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    IsMultiAttack: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
+    IsMultiAttack: 1
+    MaxDamage: 0
+    MinDamage: 0
+    Accuracy: 0.95
+    CriticalStrikeChance: 0.2
+    CriticalStrikeMultiplier: 1.2
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
