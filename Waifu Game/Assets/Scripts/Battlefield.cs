@@ -85,8 +85,8 @@ public class Battlefield : MonoBehaviour
             {
                 if (LeftCharacterPosition[i] != null)
                 {
-                    if (LeftCharacterPosition[i].character.ChibiArt != null)
-                        Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
+                    //if (LeftCharacterPosition[i].character.ChibiArt != null)
+                    //    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
 
                     LeftCharacterPosition[i].character.StartCombat();
                 }
@@ -99,8 +99,10 @@ public class Battlefield : MonoBehaviour
             {
                 if (RightCharacterPosition[i] != null)
                 {
-                    if (RightCharacterPosition[i].character.ChibiArt != null)
-                        Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 180, 0));
+                    //if (RightCharacterPosition[i].character.ChibiArt != null)
+                    //    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 180, 0));
+
+
 
                     RightCharacterPosition[i].character.StartCombat();
                 }

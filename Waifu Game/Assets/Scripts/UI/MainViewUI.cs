@@ -18,6 +18,7 @@ public class MainViewUI : MonoBehaviour
 
     [SerializeField] GameObject gatchaView;
     [SerializeField] GameObject characterSelectView;
+    public GameObject battleFieldView;
 
     [Space]
 
@@ -45,7 +46,7 @@ public class MainViewUI : MonoBehaviour
         creditsButton.onClick.AddListener(() => credits.SetActive(!credits.activeInHierarchy));
         quitButton.onClick.AddListener(() => Application.Quit());
 
-        restartButton.onClick.AddListener(delegate 
+        restartButton.onClick.AddListener(delegate
         {
             GameManager.instance.ResetGame();
             Application.Quit();

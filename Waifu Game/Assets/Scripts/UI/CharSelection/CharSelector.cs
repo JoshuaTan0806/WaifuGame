@@ -29,20 +29,23 @@ public class CharSelector : MonoBehaviour
 
         startButton.onClick.AddListener(delegate 
         {
+            //Load in the battlefield
+            MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.battleFieldView);
+            BackGroundCanvas.instance.SetActive(false);
+
             //Assign allies to battlefield
             for (int i = 0; i < charSlots.Length; i++)
             {
                 Battlefield.instance.LeftCharacterPosition[i].character = charSlots[i].charInSlot;
+
+                Battlefield.instance.LeftCharacterPosition[i].chibiSprite.sprite = charSlots[i].charInSlot.ChibiSpriteArt;
             }
 
             //Assign enemies
 
-            //Load in the battlefield
-            MainViewUI.instance.SwitchView(gameObject, Battlefield.instance.gameObject);
 
             //Start the battle
             Battlefield.instance.StartCombat();
-
         });
     }
 

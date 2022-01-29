@@ -16,6 +16,14 @@ public class Spot : MonoBehaviour
 
     public TextMeshProUGUI DamageValue;
 
+    [HideInInspector]
+    public Image chibiSprite;
+
+    private void Awake()
+    {
+        chibiSprite = GetComponent<Image>();
+    }
+
     public void SelectCharacter()
     {
         if (character == null)

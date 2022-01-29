@@ -16,6 +16,7 @@ MonoBehaviour:
   SkillLevel: 0
   Name: Lisa
   ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: 5bffb6b70822bbe449dae6bc50dbb631, type: 3}
   SplashArt: {fileID: 21300000, guid: 0bd5788707522ae46a8a6a28d7bf36ef, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
   CardRarity: 1
@@ -28,6 +29,7 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 5.252043
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
@@ -48,6 +50,7 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
@@ -68,6 +71,7 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 4.955021
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
@@ -91,6 +95,7 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
