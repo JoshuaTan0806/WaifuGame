@@ -294,17 +294,7 @@ MonoBehaviour:
   Ally: 1
   character: {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
   ActionSpeedTimer: {fileID: 704412304}
-  CurrentHealth: {fileID: 0}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
+  CurrentHealth: {fileID: 1936494902}
 --- !u!114 &86116244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1146,17 +1136,7 @@ MonoBehaviour:
   Ally: 1
   character: {fileID: 11400000, guid: 8a10c8eec0cd35b4f9c3a98f9db8051b, type: 2}
   ActionSpeedTimer: {fileID: 168816983}
-  CurrentHealth: {fileID: 0}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
+  CurrentHealth: {fileID: 1238865065}
 --- !u!114 &320929063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1872,17 +1852,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: c378d154cecdd44439de1322c9838e06, type: 2}
   ActionSpeedTimer: {fileID: 262118060}
-  CurrentHealth: {fileID: 0}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
+  CurrentHealth: {fileID: 1028243924}
 --- !u!114 &645731328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2698,17 +2668,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: e15c8bc7e81ff784da7cd23223105ef1, type: 2}
   ActionSpeedTimer: {fileID: 377528250}
-  CurrentHealth: {fileID: 0}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
+  CurrentHealth: {fileID: 1479944516}
 --- !u!114 &943047722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4781,16 +4741,6 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 454f2c30b2f0e794ba0d6fc75ccf8b99, type: 2}
   ActionSpeedTimer: {fileID: 1982164909}
   CurrentHealth: {fileID: 1594133733}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
 --- !u!114 &1648992815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6112,17 +6062,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: 2a60dccac10642143bea096eee720b13, type: 2}
   ActionSpeedTimer: {fileID: 1641363753}
-  CurrentHealth: {fileID: 0}
-  Skills:
-  - {fileID: 280848914}
-  - {fileID: 2128527425}
-  - {fileID: 1490206997}
-  Ultimate: {fileID: 1001849032}
-  FadedSkills:
-  - {fileID: 1537013964}
-  - {fileID: 180375623}
-  - {fileID: 805814434}
-  FadedUltimate: {fileID: 1706914413}
+  CurrentHealth: {fileID: 1804002008}
 --- !u!114 &2059879254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6384,6 +6324,16 @@ MonoBehaviour:
   - {fileID: 943047721}
   SelectedAlly: {fileID: 0}
   SelectedEnemy: {fileID: 0}
+  Skills:
+  - {fileID: 280848914}
+  - {fileID: 2128527425}
+  - {fileID: 1490206997}
+  Ultimate: {fileID: 1001849032}
+  FadedSkills:
+  - {fileID: 1537013964}
+  - {fileID: 180375623}
+  - {fileID: 805814434}
+  FadedUltimate: {fileID: 1706914413}
 --- !u!1 &2128527422
 GameObject:
   m_ObjectHideFlags: 0

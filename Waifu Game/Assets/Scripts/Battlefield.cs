@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Battlefield : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Battlefield : MonoBehaviour
 
     public Character SelectedAlly;
     public Character SelectedEnemy;
+
+    public Image[] Skills;
+    public Image Ultimate;
+
+    public Image[] FadedSkills;
+    public Image FadedUltimate;
 
     private void Awake()
     {
@@ -34,7 +41,12 @@ public class Battlefield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < Skills.Length; i++)
+        {
+            Skills[i].fillAmount = SelectedAlly.Skills[i].CurrentCooldown / SelectedAlly.Skills[i].Cooldown;
+        }
+
+        Ultimate.fillAmount = SelectedAlly.CurrentUltimateGauge / SelectedAlly.UltimateGauge;
     }
 
     private void OnDrawGizmos()
