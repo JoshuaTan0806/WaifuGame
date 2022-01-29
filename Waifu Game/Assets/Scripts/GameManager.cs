@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int HasChosenFaction;
     public Faction PlayerFaction;
 
+    public List<Character> everyCharacter = new List<Character>();
+
     private void Awake()
     {
         if(instance == null)
