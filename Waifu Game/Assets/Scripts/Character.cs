@@ -50,6 +50,8 @@ public class Character : ScriptableObject
 
         public float DamageGrowth;
 
+        public Sprite Icon;
+
         public void UseSkill()
         {
 
@@ -75,7 +77,7 @@ public class Character : ScriptableObject
     {
         for (int i = 0; i < Skills.Length; i++)
         {
-            Skills[i].CurrentCooldown = 0;
+            Skills[i].CurrentCooldown = Skills[i].Cooldown;
         }
 
         CurrentUltimateGauge = 0;
@@ -85,7 +87,7 @@ public class Character : ScriptableObject
     {
         for (int i = 0; i < Skills.Length; i++)
         {
-            Skills[i].CurrentCooldown -= Time.deltaTime;
+            Skills[i].CurrentCooldown += Time.deltaTime;
         }
     }
 
