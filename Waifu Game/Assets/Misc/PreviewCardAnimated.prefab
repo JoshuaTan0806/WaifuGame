@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4463718046464476098, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
+      propertyPath: m_text
+      value: NAN
+      objectReference: {fileID: 0}
     - target: {fileID: 4909289747342354901, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
       propertyPath: m_Name
       value: PreviewCardAnimated
@@ -93,6 +97,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370886759084044870, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356651372969394803, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
