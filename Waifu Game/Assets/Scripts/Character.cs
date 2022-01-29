@@ -23,7 +23,6 @@ public class Character : ScriptableObject
     public Rarity CardRarity;
     public Faction CardFaction;
     
-
     public float Health;
     [HideInInspector] public float CurrentHealth;
 
@@ -45,14 +44,13 @@ public class Character : ScriptableObject
         public float Cooldown;
         [HideInInspector] public float CurrentCooldown;
 
+        public int SkillLevel;
         public bool IsMultiAttack;
-        public float MaxDamage;
-        public float MinDamage;
+        public float[] MinDamage = new float[5];
+        public float[] MaxDamage = new float[5];
         [Range(0,1)] public float Accuracy;
         [Range(0,1)] public float CriticalStrikeChance;
         [Range(1,1.5f)] public float CriticalStrikeMultiplier;
-
-        public float DamageGrowth;
 
         public Sprite Icon;
 
@@ -67,7 +65,6 @@ public class Character : ScriptableObject
                     if (Battlefield.instance.RightCharacterPosition[i].character != null)
                     {
                         float damage = CalculateDamage();
-
 
                         if (damage == 0)
                         {
@@ -118,13 +115,13 @@ public class Character : ScriptableObject
             }
 
             roll = Random.Range(0, 1);
-            if(roll >CriticalStrikeChance)
+            if(roll > CriticalStrikeChance)
             {
-                return Random.Range(MinDamage, MaxDamage) * CriticalStrikeMultiplier;
+                return Random.Range(MinDamage[SkillLevel], MaxDamage[SkillLevel]) * CriticalStrikeMultiplier;
             }
             else
             {
-                return Random.Range(MinDamage, MaxDamage) * CriticalStrikeMultiplier;
+                return Random.Range(MinDamage[SkillLevel], MaxDamage[SkillLevel]) * CriticalStrikeMultiplier;
             }
         }
     }
@@ -139,11 +136,12 @@ public class Character : ScriptableObject
         for (int i = 0; i < Skills.Length; i++)
         {
             Skills[i].CurrentCooldown = Skills[i].Cooldown;
+            Skills[i].SkillLevel = SkillLevel;
         }
 
         CurrentUltimateGauge = 0;
 
-        CurrentHealth = Health;
+        CurrentHealth = Health + (Level * HealthGrowth);
     }
 
     public void TakeDamage(float Damage)

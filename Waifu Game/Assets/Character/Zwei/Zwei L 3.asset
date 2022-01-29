@@ -20,52 +20,92 @@ MonoBehaviour:
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
   CardFaction: 0
-  Health: 0
+  Health: 100
   CurrentHealth: 0
-  ActionSpeed: 0
+  ActionSpeed: 4
   CurrentActionSpeed: 0
-  HealthGrowth: 0
+  HealthGrowth: 2
   Skills:
   - Cooldown: 0
     CurrentCooldown: 0
-    IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
+    SkillLevel: 0
+    IsMultiAttack: 1
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
     CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}
-  - Cooldown: 0
+  - Cooldown: 10
     CurrentCooldown: 0
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
     CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}
-  - Cooldown: 0
+  - Cooldown: 10
     CurrentCooldown: 0
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
     CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}
-  UltimateGauge: 0
+  UltimateGauge: 5
   CurrentUltimateGauge: 0
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
+    SkillLevel: 0
+    IsMultiAttack: 1
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
     CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}

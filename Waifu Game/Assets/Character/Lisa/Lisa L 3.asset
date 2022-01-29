@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
   m_Name: Lisa L 3
   m_EditorClassIdentifier: 
-  Level: 3
-  SkillLevel: 5
+  Level: 1
+  SkillLevel: 0
   Name: Lisa
   ChibiArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 0bd5788707522ae46a8a6a28d7bf36ef, type: 3}
@@ -22,50 +22,90 @@ MonoBehaviour:
   CardFaction: 0
   Health: 100
   CurrentHealth: 100
-  ActionSpeed: 3
+  ActionSpeed: 4
   CurrentActionSpeed: 75.873566
   HealthGrowth: 5
   Skills:
-  - Cooldown: 5
+  - Cooldown: 0
     CurrentCooldown: 16.429573
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
+    CriticalStrikeChance: 0.2
+    CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
-  - Cooldown: 5
+  - Cooldown: 10
     CurrentCooldown: 16.429573
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.9
+    CriticalStrikeChance: 0.5
+    CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
-  - Cooldown: 5
+  - Cooldown: 10
     CurrentCooldown: 16.429573
-    IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    SkillLevel: 0
+    IsMultiAttack: 1
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.8
+    CriticalStrikeChance: 0.2
+    CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   UltimateGauge: 5
   CurrentUltimateGauge: 0
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    SkillLevel: 0
+    IsMultiAttack: 1
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 1
+    CriticalStrikeChance: 0.5
+    CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
