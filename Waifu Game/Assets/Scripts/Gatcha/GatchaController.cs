@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class GatchaController : MonoBehaviour
 {
-    [SerializeField] List<Character> lightCharacters = new List<Character>();
-    [SerializeField] List<Character> darkCharacters = new List<Character>();
-
-    [Space]
-
     [SerializeField] float commonChance = 75;
     [SerializeField] float rareChance = 20;
     [SerializeField] float superRareChance = 5;
@@ -50,23 +45,30 @@ public class GatchaController : MonoBehaviour
         Character toUnlock = null;
 
         float roll = Random.Range(0, commonChance + rareChance + superRareChance);
+        Debug.Log($"Rolled a: {roll}");
+
         roll -= superRareChance;
         if (roll < 0)
         {
             //We rolled a super rare
             toUnlock = GetRandomCharacter(Rarity.SuperRare);
         }
-        roll -= rareChance;
-        if (roll < 0)
-        {
-            //We rolled a rare
-            toUnlock = GetRandomCharacter(Rarity.Rare);
-        }
         else
         {
-            //We rolled a common
-            toUnlock = GetRandomCharacter(Rarity.Common);
+            roll -= rareChance;
+            if (roll < 0)
+            {
+                //We rolled a rare
+                toUnlock = GetRandomCharacter(Rarity.Rare);
+            }
+            else
+            {
+                //We rolled a common
+                toUnlock = GetRandomCharacter(Rarity.Common);
+            }
         }
+
+        
 
         return toUnlock;
     }
@@ -75,22 +77,11 @@ public class GatchaController : MonoBehaviour
     {
         List<Character> availableChars = new List<Character>();
 
-        switch (GameManager.instance.PlayerFaction)
+        foreach (Character c in GameManager.instance.everyCharacter)
         {
-            case Faction.Dark:
-                foreach (Character c in darkCharacters)
-                {
-                    if (c.CardRarity == rarity)
-                        availableChars.Add(c);
-                }
-                break;
-            case Faction.Light:
-                foreach (Character c in lightCharacters)
-                {
-                    if (c.CardRarity == rarity)
-                        availableChars.Add(c);
-                }
-                break;
+            if (c.CardFaction == GameManager.instance.PlayerFaction)
+                if (c.CardRarity == rarity)
+                    availableChars.Add(c);
         }
 
         if(availableChars.Count == 0)

@@ -108,8 +108,11 @@ public class CharSelector : MonoBehaviour
                             ForceAddSlot(charSlots[i + 1].charInSlot, charSlots[i]);
                         }
                     else
+                    {
+                        charSlots[i].charInSlot = null;
+                        charSlots[i].image.sprite = charSlots[i].defaultSprite;
                         return;
-
+                    }
                     i++;
                 }
             }
