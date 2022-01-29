@@ -64,8 +64,8 @@ public class Battlefield : MonoBehaviour
 
     public void StartCombat()
     {
-        SelectedAlly = LeftCharacterPosition[0].character;
-        SelectedEnemy = RightCharacterPosition[0].character;
+        LeftCharacterPosition[0].SelectCharacter();
+        RightCharacterPosition[0].SelectCharacter();
 
         if (LeftCharacterPosition.Length > 0)
         {
@@ -73,7 +73,9 @@ public class Battlefield : MonoBehaviour
             {
                 if (LeftCharacterPosition[i] != null)
                 {
-                    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
+                    if (LeftCharacterPosition[i].character.ChibiArt != null)
+                        Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
+
                     LeftCharacterPosition[i].character.StartCombat();
                 }
             }
@@ -85,10 +87,22 @@ public class Battlefield : MonoBehaviour
             {
                 if (RightCharacterPosition[i] != null)
                 {
-                    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 180, 0));
+                    if (RightCharacterPosition[i].character.ChibiArt != null)
+                        Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 180, 0));
+
                     RightCharacterPosition[i].character.StartCombat();
                 }
             }
         }
+    }
+
+    public void UseSkill(int SkillNumber)
+    {
+        SelectedAlly.UseSkill(SkillNumber);
+    }
+
+    public void UseUltimate()
+    {
+        SelectedAlly.UseUltimate();
     }
 }
