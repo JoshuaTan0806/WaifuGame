@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 [CreateAssetMenu(fileName = "Character", menuName = "Character", order = 0)]
 public class Character : ScriptableObject
@@ -45,7 +46,8 @@ public class Character : ScriptableObject
         [HideInInspector] public float CurrentCooldown;
 
         public bool IsMultiAttack;
-        public float Damage;
+        public float MaxDamage;
+        public float MinDamage;
         [Range(0,1)] public float Accuracy;
         [Range(0,1)] public float CriticalStrikeChance;
         [Range(1,1.5f)] public float CriticalStrikeMultiplier;
@@ -64,19 +66,52 @@ public class Character : ScriptableObject
                 {
                     if (Battlefield.instance.RightCharacterPosition[i].character != null)
                     {
-                        Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(CalculateDamage());
+                        float damage = CalculateDamage();
+
+
+                        if (damage == 0)
+                        {
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                        }
+                        else
+                        {
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                        }
+
+                        Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(damage);
                     }
                 }
             }
             else
             {
-                Battlefield.instance.SelectedEnemy.TakeDamage(CalculateDamage());
+                float damage = CalculateDamage();
+
+                for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+                {
+                    if(Battlefield.instance.RightCharacterPosition[i].character == Battlefield.instance.SelectedEnemy)
+                    {
+                        if (damage == 0)
+                        {
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                        }
+                        else
+                        {
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                        }
+                    }
+                }
+
+                Battlefield.instance.SelectedEnemy.TakeDamage(damage);
             }
         }
 
         public float CalculateDamage()
         {
-            float roll = Random.Range(0, 1);
+            float roll = Random.Range(0.0f, 1.0f);
             if(roll > Accuracy)
             {
                 return 0;
@@ -85,11 +120,11 @@ public class Character : ScriptableObject
             roll = Random.Range(0, 1);
             if(roll >CriticalStrikeChance)
             {
-                return Damage * CriticalStrikeMultiplier;
+                return Random.Range(MinDamage, MaxDamage) * CriticalStrikeMultiplier;
             }
             else
             {
-                return Damage;
+                return Random.Range(MinDamage, MaxDamage) * CriticalStrikeMultiplier;
             }
         }
     }
