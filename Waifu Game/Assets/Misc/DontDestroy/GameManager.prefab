@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasChosenFaction: 0
   PlayerFaction: 0
+  everyCharacter:
+  - {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}

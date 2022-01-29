@@ -30,12 +30,18 @@ public class GatchaUI : MonoBehaviour
 
         backButton.onClick.AddListener(() => 
         {
-            gameObject.SetActive(false);
+            MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject);
         });
-
-        HideCardPreview();
     }
 
+    private void OnEnable()
+    {
+        HideCardPreview();
+    }
+    private void OnDisable()
+    {
+        HideCardPreview();
+    }
     void RollGatcha()
     {
         HideCardPreview();
@@ -45,6 +51,8 @@ public class GatchaUI : MonoBehaviour
         skyBeam = GameManager.instance?.PlayerFaction == Faction.Dark ? skyBeamD : skyBeamL;
 
         StartCoroutine(RollAfterDelay(3));
+
+        backButton.gameObject.SetActive(false);
     }
     IEnumerator RollAfterDelay(float waitSeconds)
     {
@@ -64,6 +72,7 @@ public class GatchaUI : MonoBehaviour
         unlockPreview.parent.SetActive(true);
         unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name);
 
+
         float elapsed = 0;
         float speed = .5f;
 
@@ -75,6 +84,10 @@ public class GatchaUI : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+
+        yield return new WaitForSeconds(2);
+
+        backButton.gameObject.SetActive(true);
     }
 
     void HideCardPreview()
