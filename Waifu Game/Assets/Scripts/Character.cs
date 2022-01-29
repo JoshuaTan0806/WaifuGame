@@ -43,7 +43,7 @@ public class Character : ScriptableObject
     {
         public float Cooldown;
         [HideInInspector] public float CurrentCooldown;
-
+        public bool isAlly;
         public int SkillLevel;
         public bool IsMultiAttack;
         public float[] MinDamage = new float[5];
@@ -58,52 +58,107 @@ public class Character : ScriptableObject
         {
             CurrentCooldown = 0;
 
-            if (IsMultiAttack)
+            if (isAlly)
             {
-                for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+                if (IsMultiAttack)
                 {
-                    if (Battlefield.instance.RightCharacterPosition[i].character != null)
+                    for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
                     {
-                        float damage = CalculateDamage();
-
-                        if (damage == 0)
+                        if (Battlefield.instance.RightCharacterPosition[i].character != null)
                         {
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
-                        }
-                        else
-                        {
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
-                        }
+                            float damage = CalculateDamage();
 
-                        Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(damage);
+                            if (damage == 0)
+                            {
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+                            else
+                            {
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+
+                            Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(damage);
+                        }
                     }
+                }
+                else
+                {
+                    float damage = CalculateDamage();
+
+                    for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+                    {
+                        if (Battlefield.instance.RightCharacterPosition[i].character == Battlefield.instance.SelectedEnemy)
+                        {
+                            if (damage == 0)
+                            {
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+                            else
+                            {
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                                Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+                        }
+                    }
+
+                    Battlefield.instance.SelectedEnemy.TakeDamage(damage);
                 }
             }
             else
             {
-                float damage = CalculateDamage();
-
-                for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+                if (IsMultiAttack)
                 {
-                    if(Battlefield.instance.RightCharacterPosition[i].character == Battlefield.instance.SelectedEnemy)
+                    for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
                     {
-                        if (damage == 0)
+                        if (Battlefield.instance.LeftCharacterPosition[i].character != null)
                         {
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
-                        }
-                        else
-                        {
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
-                            Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            float damage = CalculateDamage();
+
+                            if (damage == 0)
+                            {
+                                Battlefield.instance.LeftCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                                Battlefield.instance.LeftCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+                            else
+                            {
+                                Battlefield.instance.LeftCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                                Battlefield.instance.LeftCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+
+                            Battlefield.instance.LeftCharacterPosition[i].character.TakeDamage(damage);
                         }
                     }
                 }
+                else
+                {
+                    int CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
+                    int counter = 0;
+                    while(Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character == null && counter < 100)
+                    {
+                        CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
+                        counter++;
+                    }
 
-                Battlefield.instance.SelectedEnemy.TakeDamage(damage);
+                    float damage = CalculateDamage();
+
+                    if (damage == 0)
+                    {
+                        Battlefield.instance.LeftCharacterPosition[CharacterToAttack].DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                        Battlefield.instance.LeftCharacterPosition[CharacterToAttack].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                    }
+                    else
+                    {
+                        Battlefield.instance.LeftCharacterPosition[CharacterToAttack].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                        Battlefield.instance.LeftCharacterPosition[CharacterToAttack].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                    }
+
+                    Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character.TakeDamage(damage);
+                }
             }
+
         }
 
         public float CalculateDamage()
@@ -137,6 +192,7 @@ public class Character : ScriptableObject
         {
             Skills[i].CurrentCooldown = Skills[i].Cooldown;
             Skills[i].SkillLevel = SkillLevel;
+            Skills[i].isAlly = IsAlly();
         }
 
         CurrentUltimateGauge = 0;
@@ -221,12 +277,26 @@ public class Character : ScriptableObject
         }
     }
 
+    public bool IsAlly()
+    {
+        for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
+        {
+            if (this == Battlefield.instance.LeftCharacterPosition[i].character)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public void UseSkill(int SkillNumber)
     {
         if (CurrentActionSpeed >= ActionSpeed && Skills[SkillNumber].CurrentCooldown >= Skills[SkillNumber].Cooldown)
         {
             Skills[SkillNumber].UseSkill();
             CurrentActionSpeed = 0;
+            GainUltimateGauge();
         }
     }
 
