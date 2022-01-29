@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 3790390765635156760, guid: 10904d7bd52703c4d9a158dcf77b3c39, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3790390765635156764, guid: 10904d7bd52703c4d9a158dcf77b3c39, type: 3}
       propertyPath: m_Pivot.x
       value: 0

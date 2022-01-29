@@ -61,7 +61,7 @@ public class ChooseFaction : MonoBehaviour
             Character newCharacter = GatchaController.instance.DoGatcha(false);
 
             PreviewCard inst = Instantiate(cardTemplate, cardHolder);
-            inst.SetCard(newCharacter.SplashBackground, newCharacter.SplashArt, newCharacter.Name);
+            inst.SetCard(newCharacter.SplashBackground, newCharacter.SplashArt, newCharacter.Name, newCharacter.CardRarity);
             inst.GetComponent<Animator>().SetTrigger("Preview");
 
             Destroy(inst.gameObject, 4);

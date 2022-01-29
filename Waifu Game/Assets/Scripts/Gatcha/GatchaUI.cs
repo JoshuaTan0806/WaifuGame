@@ -100,7 +100,7 @@ public class GatchaUI : MonoBehaviour
             yield break;
 
         unlockPreview.parent.SetActive(true);
-        unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name, unlocked.SkillLevel.ToString());
+        unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name, unlocked.CardRarity, unlocked.SkillLevel.ToString());
 
 
         float elapsed = 0;

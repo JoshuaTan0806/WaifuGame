@@ -31,6 +31,17 @@ public class CharSelector : MonoBehaviour
     private void OnEnable()
     {
         CheckStartButton();
+
+        foreach (CharSlot s in charSlots)
+        {
+            if (s)
+                if (s.charInSlot != null)
+                    FindCard(s.charInSlot, true);
+                else
+                    return;
+            else
+                break;
+        }
     }
 
     public void AddToSlot(Character toAdd)
@@ -75,6 +86,7 @@ public class CharSelector : MonoBehaviour
     void ForceAddSlot(Character c, CharSlot s)
     {
         s.charInSlot = c;
+
         s.image.sprite = c.SplashArt;
     }
 

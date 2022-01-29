@@ -39,7 +39,7 @@ public class CardScroller : MonoBehaviour
         Character randomChar = GameManager.instance.everyCharacter[Random.Range(0, GameManager.instance.everyCharacter.Count)];
 
         //Set the card
-        card.SetCard(randomChar.SplashBackground, randomChar.SplashArt, randomChar.Name);
+        card.SetCard(randomChar.SplashBackground, randomChar.SplashArt, randomChar.Name, randomChar.CardRarity);
 
         //Animate the card
         animator.SetTrigger("Preview");

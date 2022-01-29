@@ -71,6 +71,8 @@ public class GameManager : MonoBehaviour
             everyCharacter[i].SkillLevel = 0;
         }
 
+        currency = 0;
+
         SaveGame();
     }
 
