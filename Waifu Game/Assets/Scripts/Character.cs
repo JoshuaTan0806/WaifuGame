@@ -73,6 +73,11 @@ public class Character : ScriptableObject
         Skills[SkillNumber].UseSkill();
     }
 
+    public void UseUltimate()
+    {
+        Ultimate.UseSkill();
+    }
+
     void ResetSkills()
     {
         for (int i = 0; i < Skills.Length; i++)
