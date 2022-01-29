@@ -26,7 +26,7 @@ public class ChooseFaction : MonoBehaviour
             darkButton.onClick.AddListener(ChooseDarkFaction);
 
             continueButton.gameObject.SetActive(false);
-            continueButton.onClick.AddListener(() => SceneManager.LoadScene(2));
+            continueButton.onClick.AddListener(delegate { GameManager.instance.SaveGame(); SceneManager.LoadScene(2); });
         }
     }
 
