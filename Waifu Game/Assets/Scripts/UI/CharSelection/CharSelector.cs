@@ -26,6 +26,24 @@ public class CharSelector : MonoBehaviour
             if (s)
                 s.button.onClick.AddListener(() => RemoveSlot(s));
         }
+
+        startButton.onClick.AddListener(delegate 
+        {
+            //Assign allies to battlefield
+            for (int i = 0; i < charSlots.Length; i++)
+            {
+                Battlefield.instance.LeftCharacterPosition[i].character = charSlots[i].charInSlot;
+            }
+
+            //Assign enemies
+
+            //Load in the battlefield
+            MainViewUI.instance.SwitchView(gameObject, Battlefield.instance.gameObject);
+
+            //Start the battle
+            Battlefield.instance.StartCombat();
+
+        });
     }
 
     private void OnEnable()

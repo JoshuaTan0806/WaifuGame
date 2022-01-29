@@ -35,7 +35,7 @@ public class Battlefield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCombat();
+        //StartCombat();
     }
 
     // Update is called once per frame
