@@ -26,6 +26,10 @@ public class GatchaUI : MonoBehaviour
 
     [SerializeField] PreviewCard unlockPreview;
 
+    [Header("Debug")]
+
+    [SerializeField] Button getCoinsButton;
+
     private void Start()
     {
         rollGatchaButton.onClick.AddListener(RollGatcha);
@@ -37,6 +41,12 @@ public class GatchaUI : MonoBehaviour
         });
 
         currencyText.text = GameManager.instance.currency.ToString();
+
+//#if !UNITY_EDITOR
+//        Destroy(getCoinsButton.gameObject);
+//#else
+        getCoinsButton.onClick.AddListener(() => GameManager.instance.currency += 100);
+//#endif
     }
 
     private void OnEnable()
