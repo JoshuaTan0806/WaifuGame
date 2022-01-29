@@ -33,6 +33,7 @@ public class GatchaUI : MonoBehaviour
         backButton.onClick.AddListener(() => 
         {
             MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject);
+            BackGroundCanvas.instance.SetActive(true);
         });
 
         currencyText.text = GameManager.instance.currency.ToString();
