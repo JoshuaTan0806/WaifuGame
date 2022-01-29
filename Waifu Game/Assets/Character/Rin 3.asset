@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
+  m_Name: Rin 3
+  m_EditorClassIdentifier: 
+  Level: 1
+  SkillLevel: 0
+  CardRarity: 2
+  CardFaction: 1
+  Health: 100
+  Armour: 0.1
+  MagicResist: 0.1
+  HealthGrowth: 5
+  UltimateGauge: 5
+  CurrentUltimateGauge: 0
+  Skills:
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+  - IsUltimate: 0
+    IsMultiAttack: 0
+    Cooldown: 0
+    CurrentCooldown: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0

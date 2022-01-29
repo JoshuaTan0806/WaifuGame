@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "Character", menuName = "Character", order = 0)]
 public class Character : ScriptableObject
@@ -14,6 +15,8 @@ public class Character : ScriptableObject
     public int SkillLevel = 0;
 
     [Header("Stats")]
+    public GameObject ChibiArt;
+    public Image SplashArt;
     public Rarity CardRarity;
     public Faction CardFaction;
     
@@ -44,11 +47,26 @@ public class Character : ScriptableObject
         public float CriticalStrikeMultiplier;
 
         public float DamageGrowth;
+
+        public void UseSkill()
+        {
+
+        }
+    }
+
+    public void Update()
+    {
+        TickSkills();
     }
 
     public void StartCombat()
     {
         ResetSkills();
+    }
+
+    public void UseSkill(int SkillNumber)
+    {
+        Skills[SkillNumber].UseSkill();
     }
 
     void ResetSkills()
@@ -61,9 +79,17 @@ public class Character : ScriptableObject
         CurrentUltimateGauge = 0;
     }
 
+    public void TickSkills()
+    {
+        for (int i = 0; i < Skills.Length; i++)
+        {
+            Skills[i].CurrentCooldown -= Time.deltaTime;
+        }
+    }
+
     public void GainUltimateGauge()
     {
-
+        CurrentUltimateGauge++;
     }
 
 }
