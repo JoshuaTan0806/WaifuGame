@@ -64,7 +64,7 @@ public class ChooseFaction : MonoBehaviour
             inst.SetCard(newCharacter.SplashBackground, newCharacter.SplashArt, newCharacter.Name);
             inst.GetComponent<Animator>().SetTrigger("Preview");
 
-            Destroy(inst.gameObject, 8);
+            Destroy(inst.gameObject, 4);
 
             yield return new WaitForSeconds(3);
         }

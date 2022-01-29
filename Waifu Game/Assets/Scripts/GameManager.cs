@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         }
 
         LoadGame();
-        HasChosenFaction = PlayerPrefs.GetInt("HasChosenFaction");
+        HasChosenFaction = 0;//PlayerPrefs.GetInt("HasChosenFaction");
         switch (HasChosenFaction)
         {
             case 1:
