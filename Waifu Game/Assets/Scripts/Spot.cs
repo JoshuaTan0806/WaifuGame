@@ -9,8 +9,15 @@ public class Spot : MonoBehaviour
 
     public Character character;
 
+    public Image ActionSpeedTimer;
+
+    public Image CurrentHealth;
+
     public Image[] Skills;
     public Image Ultimate;
+
+    public Image[] FadedSkills;
+    public Image FadedUltimate;
 
     public void SelectCharacter()
     {
@@ -24,8 +31,11 @@ public class Spot : MonoBehaviour
             for (int i = 0; i < Skills.Length; i++)
             {
                 Skills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
-                Skills[i].fillAmount = Battlefield.instance.SelectedAlly.Skills[i].CurrentCooldown / Battlefield.instance.SelectedAlly.Skills[i].Cooldown;
+                FadedSkills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
             }
+
+            Ultimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
+            FadedUltimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
         }
         else
         {
@@ -37,7 +47,15 @@ public class Spot : MonoBehaviour
     {
         character.Update();
 
-        Ultimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
+        for (int i = 0; i < Skills.Length; i++)
+        {
+            Skills[i].fillAmount = Battlefield.instance.SelectedAlly.Skills[i].CurrentCooldown / Battlefield.instance.SelectedAlly.Skills[i].Cooldown;
+        }
+
         Ultimate.fillAmount = Battlefield.instance.SelectedAlly.CurrentUltimateGauge / Battlefield.instance.SelectedAlly.UltimateGauge;
+
+        ActionSpeedTimer.fillAmount = character.CurrentActionSpeed / character.ActionSpeed;
+
+        CurrentHealth.fillAmount = character.CurrentHealth / character.Health;
     }
 }

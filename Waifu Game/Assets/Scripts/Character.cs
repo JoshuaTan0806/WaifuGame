@@ -24,6 +24,10 @@ public class Character : ScriptableObject
     
 
     public float Health;
+    [HideInInspector] public float CurrentHealth;
+
+    public float ActionSpeed;
+    [HideInInspector] public float CurrentActionSpeed;
     [Range(0,1)] public float Armour;
     [Range(0,1)] public float MagicResist;
 
@@ -33,14 +37,14 @@ public class Character : ScriptableObject
     public Skill[] Skills = new Skill[3];
 
     public float UltimateGauge;
-    public float CurrentUltimateGauge;
+    [HideInInspector] public float CurrentUltimateGauge;
     public Skill Ultimate;
 
     [System.Serializable]
     public class Skill
     {
         public float Cooldown;
-        public float CurrentCooldown;
+        [HideInInspector] public float CurrentCooldown;
 
         public bool IsMultiAttack;
         public float Damage;
@@ -54,31 +58,16 @@ public class Character : ScriptableObject
 
         public void UseSkill()
         {
-
+            CurrentCooldown = 0;
         }
     }
 
     public void Update()
     {
-        TickSkills();
+        UpdateTimers();
     }
 
     public void StartCombat()
-    {
-        ResetSkills();
-    }
-
-    public void UseSkill(int SkillNumber)
-    {
-        Skills[SkillNumber].UseSkill();
-    }
-
-    public void UseUltimate()
-    {
-        Ultimate.UseSkill();
-    }
-
-    void ResetSkills()
     {
         for (int i = 0; i < Skills.Length; i++)
         {
@@ -86,14 +75,37 @@ public class Character : ScriptableObject
         }
 
         CurrentUltimateGauge = 0;
+
+        CurrentHealth = Health;
     }
 
-    public void TickSkills()
+    public void UseSkill(int SkillNumber)
+    {
+        if (CurrentActionSpeed >= ActionSpeed && Skills[SkillNumber].CurrentCooldown >= Skills[SkillNumber].Cooldown)
+        {
+            Skills[SkillNumber].UseSkill();
+            CurrentActionSpeed = 0;
+        }
+    }
+
+    public void UseUltimate()
+    {
+        if (CurrentActionSpeed >= ActionSpeed && CurrentUltimateGauge >= UltimateGauge)
+        {
+            CurrentActionSpeed = 0;
+            CurrentUltimateGauge = 0;
+            Ultimate.UseSkill();
+        }
+    }
+
+    public void UpdateTimers()
     {
         for (int i = 0; i < Skills.Length; i++)
         {
             Skills[i].CurrentCooldown += Time.deltaTime;
         }
+
+        CurrentActionSpeed += Time.deltaTime;
     }
 
     public void GainUltimateGauge()
