@@ -39,6 +39,15 @@ public class GameManager : MonoBehaviour
 
         //load game data
         HasChosenFaction = PlayerPrefs.GetInt("HasChosenFaction");
+        switch (HasChosenFaction)
+        {
+            case 1:
+                PlayerFaction = Faction.Light;
+                break;
+            case 2:
+                PlayerFaction = Faction.Dark;
+                break;
+        }
 
         currency = PlayerPrefs.GetInt("Currency");
     }

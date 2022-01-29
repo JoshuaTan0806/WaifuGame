@@ -24,12 +24,10 @@ public class GatchaController : MonoBehaviour
         }
     }
 
-    public Character DoGatcha()
+    public Character DoGatcha(bool allowDuplicates = true)
     {
-        //Create the effects
-
         //Roll the character
-        Character unlocked = RollCharacter();
+        Character unlocked = RollCharacter(allowDuplicates);
         if (!unlocked)
         {
             Debug.LogError("Could not roll a character");
@@ -43,7 +41,7 @@ public class GatchaController : MonoBehaviour
     }
 
     //Roll a character
-    Character RollCharacter()
+    Character RollCharacter(bool allowDuplicates)
     {
         Character toUnlock = null;
 
@@ -54,7 +52,7 @@ public class GatchaController : MonoBehaviour
         if (roll < 0)
         {
             //We rolled a super rare
-            toUnlock = GetRandomCharacter(Rarity.SuperRare);
+            toUnlock = GetRandomCharacter(Rarity.SuperRare, allowDuplicates);
         }
         else
         {
@@ -62,21 +60,18 @@ public class GatchaController : MonoBehaviour
             if (roll < 0)
             {
                 //We rolled a rare
-                toUnlock = GetRandomCharacter(Rarity.Rare);
+                toUnlock = GetRandomCharacter(Rarity.Rare, allowDuplicates);
             }
             else
             {
                 //We rolled a common
-                toUnlock = GetRandomCharacter(Rarity.Common);
+                toUnlock = GetRandomCharacter(Rarity.Common, allowDuplicates);
             }
         }
-
-        
-
         return toUnlock;
     }
     //Look through list of characters for ones with same rarity and return one of them
-    Character GetRandomCharacter(Rarity rarity)
+    Character GetRandomCharacter(Rarity rarity, bool allowDuplicates)
     {
         List<Character> availableChars = new List<Character>();
 
@@ -84,12 +79,30 @@ public class GatchaController : MonoBehaviour
         {
             if (c.CardFaction == GameManager.instance.PlayerFaction)
                 if (c.CardRarity == rarity)
+                {
+                    if (allowDuplicates == false)
+                        if (HasCharacter(c))
+                            continue;
+
                     availableChars.Add(c);
+                }
         }
 
         if(availableChars.Count == 0)
             return null;
 
         return availableChars[Random.Range(0, availableChars.Count)];
+    }
+
+    bool HasCharacter(Character c)
+    {
+        foreach (Character character in GameManager.instance.everyCharacter)
+        {
+            if (character.Name == c.Name)
+                if (character.SkillLevel > 0)
+                    return true;
+        }
+
+        return false;
     }
 }
