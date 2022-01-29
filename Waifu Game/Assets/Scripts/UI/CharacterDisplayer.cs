@@ -13,7 +13,9 @@ public class CharacterDisplayer : MonoBehaviour
 
     private void Start()
     {
-        backButton.onClick.AddListener(() => { gameObject.SetActive(false); Depopulate(); });
+        backButton.onClick.AddListener(() => {
+            MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject);
+            Depopulate(); });
     }
 
     private void OnEnable()
