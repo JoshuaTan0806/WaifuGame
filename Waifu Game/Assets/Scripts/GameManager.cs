@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     public int HasChosenFaction;
     public Faction PlayerFaction;
 
+    public int currency;
+
     public List<Character> everyCharacter = new List<Character>();
 
     private void Awake()
@@ -37,5 +39,12 @@ public class GameManager : MonoBehaviour
 
         //load game data
         HasChosenFaction = PlayerPrefs.GetInt("HasChosenFaction");
+
+        currency = PlayerPrefs.GetInt("Currency");
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("Currency", currency);
     }
 }

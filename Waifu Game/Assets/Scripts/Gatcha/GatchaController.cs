@@ -45,7 +45,7 @@ public class GatchaController : MonoBehaviour
         Character toUnlock = null;
 
         float roll = Random.Range(0, commonChance + rareChance + superRareChance);
-        Debug.Log($"Rolled a: {roll}");
+        //Debug.Log($"Rolled a: {roll}");
 
         roll -= superRareChance;
         if (roll < 0)
