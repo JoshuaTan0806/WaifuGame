@@ -8,10 +8,17 @@ public class MainViewUI : MonoBehaviour
     [SerializeField] Button startRunButton;
     [SerializeField] Button gatchaPageButton;
 
+    [SerializeField] Button creditsButton;
+    [SerializeField] Button quitButton;
+
     [Space]
 
     [SerializeField] GameObject gatchaView;
     [SerializeField] GameObject characterSelectView;
+
+    [Space]
+
+    [SerializeField] GameObject credits;
 
     GameObject currentView;
 
@@ -31,6 +38,8 @@ public class MainViewUI : MonoBehaviour
 
         startRunButton.onClick.AddListener(() => SwitchView(currentView, characterSelectView));
         gatchaPageButton.onClick.AddListener(() => SwitchView(currentView, gatchaView));
+        creditsButton.onClick.AddListener(()=> credits.SetActive(!credits.activeInHierarchy));
+        quitButton.onClick.AddListener(() => Application.Quit());
     }
 
     public void SwitchView(GameObject oldView, GameObject newView)
