@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public enum Faction
 {
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //load game data
+        LoadGame();
         HasChosenFaction = PlayerPrefs.GetInt("HasChosenFaction");
         switch (HasChosenFaction)
         {
@@ -55,5 +56,48 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("Currency", currency);
+        SaveGame();
+    }
+
+    public void SaveGame()
+    {
+        for (int i = 0; i < everyCharacter.Count; i++)
+        {
+            Character character = everyCharacter[i];
+
+            File.AppendAllText
+                (
+                "PlayerData", "Character " + i.ToString() + "\n" +
+
+                character.Level + "\n" +
+                character.SkillLevel + "\n\n"
+
+                );
+        }
+    }
+
+    public void LoadGame()
+    {
+        StreamReader reader = new StreamReader("PlayerData");
+        string text = reader.ReadToEnd();
+
+        reader.Close();
+
+        string[] lines = text.Split('\n');
+
+        int characterIndex = 0;
+
+        for (int i = 0; i < lines.Length; i++)
+        {
+            if (lines[i].Contains("Character"))
+            {
+                int level = int.Parse(lines[i + 1]);
+                int skillLevel = int.Parse(lines[i + 2]);
+
+                everyCharacter[characterIndex].Level = level;
+                everyCharacter[characterIndex].SkillLevel= skillLevel;
+                characterIndex++;
+            }
+        }
     }
 }

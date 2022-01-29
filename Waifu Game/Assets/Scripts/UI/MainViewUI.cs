@@ -40,7 +40,7 @@ public class MainViewUI : MonoBehaviour
 
         startRunButton.onClick.AddListener(() => SwitchView(currentView, characterSelectView));
         gatchaPageButton.onClick.AddListener(delegate { SwitchView(currentView, gatchaView); BackGroundCanvas.instance.SetActive(false); });
-        creditsButton.onClick.AddListener(()=> credits.SetActive(!credits.activeInHierarchy));
+        creditsButton.onClick.AddListener(() => credits.SetActive(!credits.activeInHierarchy));
         quitButton.onClick.AddListener(() => Application.Quit());
     }
 
