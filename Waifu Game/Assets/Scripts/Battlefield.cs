@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Battlefield : MonoBehaviour
 {
-    public Transform[] LeftCharacterPosition;
-    public Transform[] RightCharacterPosition;
+    public Spot[] LeftCharacterPosition;
+    public Spot[] RightCharacterPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,10 @@ public class Battlefield : MonoBehaviour
         {
             for (int i = 0; i < LeftCharacterPosition.Length; i++)
             {
-                Gizmos.DrawSphere(LeftCharacterPosition[i].position, 0.1f);
+                if (LeftCharacterPosition[i] != null)
+                {
+                    Gizmos.DrawSphere(LeftCharacterPosition[i].transform.position, 0.1f);
+                }
             }
         }
 
@@ -33,7 +36,37 @@ public class Battlefield : MonoBehaviour
         {
             for (int i = 0; i < RightCharacterPosition.Length; i++)
             {
-                Gizmos.DrawSphere(RightCharacterPosition[i].position, 0.1f);
+                if (RightCharacterPosition[i] != null)
+                {
+                    Gizmos.DrawSphere(RightCharacterPosition[i].transform.position, 0.1f);
+                }
+            }
+        }
+    }
+
+    public void StartCombat()
+    {
+        if (LeftCharacterPosition.Length > 0)
+        {
+            for (int i = 0; i < LeftCharacterPosition.Length; i++)
+            {
+                if (LeftCharacterPosition[i] != null)
+                {
+                    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
+                    LeftCharacterPosition[i].character.StartCombat();
+                }
+            }
+        }
+
+        if (RightCharacterPosition.Length > 0)
+        {
+            for (int i = 0; i < RightCharacterPosition.Length; i++)
+            {
+                if (RightCharacterPosition[i] != null)
+                {
+                    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 180, 0));
+                    RightCharacterPosition[i].character.StartCombat();
+                }
             }
         }
     }

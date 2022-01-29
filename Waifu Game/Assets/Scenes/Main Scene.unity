@@ -899,13 +899,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftCharacterPosition:
-  - {fileID: 94272921}
-  - {fileID: 2114168848}
-  - {fileID: 1254222034}
+  - {fileID: 94272922}
+  - {fileID: 2114168849}
+  - {fileID: 1254222035}
   RightCharacterPosition:
-  - {fileID: 161058034}
-  - {fileID: 2083919857}
-  - {fileID: 1645112971}
+  - {fileID: 161058035}
+  - {fileID: 2083919858}
+  - {fileID: 1645112972}
 --- !u!1 &1254222033
 GameObject:
   m_ObjectHideFlags: 0
