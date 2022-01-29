@@ -8,6 +8,8 @@ public class CharSelector : MonoBehaviour
 {
     [SerializeField] CharSlot[] charSlots;
 
+    [SerializeField] Button startButton;
+
     public static CharSelector instance;
     private void Awake()
     {
@@ -24,6 +26,11 @@ public class CharSelector : MonoBehaviour
             if (s)
                 s.button.onClick.AddListener(() => RemoveSlot(s));
         }
+    }
+
+    private void OnEnable()
+    {
+        CheckStartButton();
     }
 
     public void AddToSlot(Character toAdd)
@@ -55,6 +62,8 @@ public class CharSelector : MonoBehaviour
                     //Set the cardpreview to be selected
                     FindCard(toAdd, true);
 
+                    CheckStartButton();
+
                     return;
                 }
                 else
@@ -77,6 +86,8 @@ public class CharSelector : MonoBehaviour
 
         s.charInSlot = null;
         s.image.sprite = s.defaultSprite;
+
+        startButton.gameObject.SetActive(false);
 
         //Move all the other slots down
         MoveSlotsDown(s);
@@ -138,5 +149,22 @@ public class CharSelector : MonoBehaviour
                     && pc.splashArt.sprite == c.SplashArt)
                     pc.selectedImage.gameObject.SetActive(selected);
         }
+    }
+
+    void CheckStartButton()
+    {
+        foreach (CharSlot cs in charSlots)
+        {
+            if (cs)
+            {
+                if(cs.charInSlot == null)
+                {
+                    startButton.gameObject.SetActive(false);
+                    return;
+                }
+            }
+        }
+
+        startButton.gameObject.SetActive(true);
     }
 }
