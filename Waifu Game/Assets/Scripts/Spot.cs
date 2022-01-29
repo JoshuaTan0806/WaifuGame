@@ -13,12 +13,6 @@ public class Spot : MonoBehaviour
 
     public Image CurrentHealth;
 
-    public Image[] Skills;
-    public Image Ultimate;
-
-    public Image[] FadedSkills;
-    public Image FadedUltimate;
-
     public void SelectCharacter()
     {
         if (character == null)
@@ -28,14 +22,14 @@ public class Spot : MonoBehaviour
         {
             Battlefield.instance.SelectedAlly = character;
 
-            for (int i = 0; i < Skills.Length; i++)
+            for (int i = 0; i < Battlefield.instance.Skills.Length; i++)
             {
-                Skills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
-                FadedSkills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
+                Battlefield.instance.Skills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
+                Battlefield.instance.FadedSkills[i].sprite = Battlefield.instance.SelectedAlly.Skills[i].Icon;
             }
 
-            Ultimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
-            FadedUltimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
+            Battlefield.instance.Ultimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
+            Battlefield.instance.FadedUltimate.sprite = Battlefield.instance.SelectedAlly.Ultimate.Icon;
         }
         else
         {
@@ -45,17 +39,16 @@ public class Spot : MonoBehaviour
 
     private void Update()
     {
-        character.Update();
-
-        for (int i = 0; i < Skills.Length; i++)
+        if (character != null)
         {
-            Skills[i].fillAmount = Battlefield.instance.SelectedAlly.Skills[i].CurrentCooldown / Battlefield.instance.SelectedAlly.Skills[i].Cooldown;
+            character.Update();
+            ActionSpeedTimer.fillAmount = character.CurrentActionSpeed / character.ActionSpeed;
+            CurrentHealth.fillAmount = character.CurrentHealth / character.Health;
         }
-
-        Ultimate.fillAmount = Battlefield.instance.SelectedAlly.CurrentUltimateGauge / Battlefield.instance.SelectedAlly.UltimateGauge;
-
-        ActionSpeedTimer.fillAmount = character.CurrentActionSpeed / character.ActionSpeed;
-
-        CurrentHealth.fillAmount = character.CurrentHealth / character.Health;
+        else
+        {
+            CurrentHealth.fillAmount = 0;
+            ActionSpeedTimer.fillAmount = 0;
+        }
     }
 }

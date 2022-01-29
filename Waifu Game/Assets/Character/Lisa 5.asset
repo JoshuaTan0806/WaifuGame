@@ -23,11 +23,11 @@ MonoBehaviour:
   Health: 100
   CurrentHealth: 100
   ActionSpeed: 3
-  CurrentActionSpeed: 1.9026121
+  CurrentActionSpeed: 51.127174
   HealthGrowth: 5
   Skills:
   - Cooldown: 0
-    CurrentCooldown: 19.660505
+    CurrentCooldown: 99.3931
     IsMultiAttack: 0
     Damage: 5
     Accuracy: 0.95
@@ -36,16 +36,16 @@ MonoBehaviour:
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 5
-    CurrentCooldown: 1.9026121
+    CurrentCooldown: 51.127174
     IsMultiAttack: 0
-    Damage: 5
+    Damage: 100
     Accuracy: 0.95
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.5
     DamageGrowth: 0
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 5
-    CurrentCooldown: 5.084112
+    CurrentCooldown: 77.98889
     IsMultiAttack: 1
     Damage: 2
     Accuracy: 0.5

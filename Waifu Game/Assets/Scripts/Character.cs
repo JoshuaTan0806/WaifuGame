@@ -121,9 +121,71 @@ public class Character : ScriptableObject
         }
     }
 
-    public void Die()
+    public void Win()
     {
 
+    }
+
+    public void Lose()
+    {
+
+    }
+
+    public void Die()
+    {
+        for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
+        {
+            if (this == Battlefield.instance.LeftCharacterPosition[i].character)
+            {
+                Battlefield.instance.LeftCharacterPosition[i].character = null;
+                break;
+            }
+        }
+
+        for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+        {
+            if (this == Battlefield.instance.RightCharacterPosition[i].character)
+            {
+                Battlefield.instance.RightCharacterPosition[i].character = null;
+                break;
+            }
+        }
+
+        if (this == Battlefield.instance.SelectedAlly)
+        {
+            for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
+            {
+                if (Battlefield.instance.LeftCharacterPosition[i].character != null)
+                {
+                    Battlefield.instance.SelectedAlly = Battlefield.instance.LeftCharacterPosition[i].character;
+                    break;
+                }
+
+                if (i == Battlefield.instance.LeftCharacterPosition.Length - 1)
+                {
+                    Lose();
+                    Debug.Log("Lose");
+                }
+            }
+        }
+
+        if (this == Battlefield.instance.SelectedEnemy)
+        {
+            for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+            {
+                if (Battlefield.instance.RightCharacterPosition[i].character != null)
+                {
+                    Battlefield.instance.SelectedEnemy = Battlefield.instance.RightCharacterPosition[i].character;
+                    break;
+                }
+
+                if (i == Battlefield.instance.LeftCharacterPosition.Length - 1)
+                {
+                    Win();
+                    Debug.Log("Win");
+                }
+            }
+        }
     }
 
     public void UseSkill(int SkillNumber)
