@@ -22,50 +22,90 @@ MonoBehaviour:
   CardFaction: 1
   Health: 100
   CurrentHealth: 88
-  ActionSpeed: 3
+  ActionSpeed: 5
   CurrentActionSpeed: 50.289383
-  HealthGrowth: 5
+  HealthGrowth: 4
   Skills:
-  - Cooldown: 5
+  - Cooldown: 0
     CurrentCooldown: 13.906232
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 2
-    MinDamage: 5
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.5
+    CriticalStrikeChance: 0.9
+    CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
-  - Cooldown: 5
+  - Cooldown: 10
     CurrentCooldown: 13.906232
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 2
-    MinDamage: 5
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.5
+    CriticalStrikeChance: 0.9
+    CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
-  - Cooldown: 5
+  - Cooldown: 10
     CurrentCooldown: 13.906232
-    IsMultiAttack: 0
-    MaxDamage: 2
-    MinDamage: 3
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    SkillLevel: 0
+    IsMultiAttack: 1
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.5
+    CriticalStrikeChance: 0.9
+    CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   UltimateGauge: 5
   CurrentUltimateGauge: 0
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    SkillLevel: 0
     IsMultiAttack: 0
-    MaxDamage: 0
-    MinDamage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    MinDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    MaxDamage:
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    Accuracy: 0.5
+    CriticalStrikeChance: 0.9
+    CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}

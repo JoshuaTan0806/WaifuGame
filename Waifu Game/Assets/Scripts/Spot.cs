@@ -46,12 +46,22 @@ public class Spot : MonoBehaviour
         {
             character.Update();
             ActionSpeedTimer.fillAmount = character.CurrentActionSpeed / character.ActionSpeed;
-            CurrentHealth.fillAmount = character.CurrentHealth / character.Health;
+            CurrentHealth.fillAmount = character.CurrentHealth / character.Health + (character.Level * character.HealthGrowth);
         }
         else
         {
             CurrentHealth.fillAmount = 0;
             ActionSpeedTimer.fillAmount = 0;
+        }
+
+        if(!Ally && character != null)
+        {
+            character.UseUltimate();
+
+            for (int i = character.Skills.Length - 1; i >= 0; i--)
+            {
+                character.UseSkill(i);
+            }
         }
     }
 }
