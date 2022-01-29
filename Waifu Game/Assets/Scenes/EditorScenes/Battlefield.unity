@@ -294,7 +294,7 @@ MonoBehaviour:
   Ally: 1
   character: {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
   ActionSpeedTimer: {fileID: 704412304}
-  CurrentHealth: {fileID: 0}
+  CurrentHealth: {fileID: 1936494902}
   Skills:
   - {fileID: 280848914}
   - {fileID: 2128527425}
@@ -1146,7 +1146,7 @@ MonoBehaviour:
   Ally: 1
   character: {fileID: 11400000, guid: 8a10c8eec0cd35b4f9c3a98f9db8051b, type: 2}
   ActionSpeedTimer: {fileID: 168816983}
-  CurrentHealth: {fileID: 0}
+  CurrentHealth: {fileID: 1238865065}
   Skills:
   - {fileID: 280848914}
   - {fileID: 2128527425}
@@ -1872,7 +1872,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: c378d154cecdd44439de1322c9838e06, type: 2}
   ActionSpeedTimer: {fileID: 262118060}
-  CurrentHealth: {fileID: 0}
+  CurrentHealth: {fileID: 1028243924}
   Skills:
   - {fileID: 280848914}
   - {fileID: 2128527425}
@@ -2698,7 +2698,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: e15c8bc7e81ff784da7cd23223105ef1, type: 2}
   ActionSpeedTimer: {fileID: 377528250}
-  CurrentHealth: {fileID: 0}
+  CurrentHealth: {fileID: 1479944516}
   Skills:
   - {fileID: 280848914}
   - {fileID: 2128527425}
@@ -6112,7 +6112,7 @@ MonoBehaviour:
   Ally: 0
   character: {fileID: 11400000, guid: 2a60dccac10642143bea096eee720b13, type: 2}
   ActionSpeedTimer: {fileID: 1641363753}
-  CurrentHealth: {fileID: 0}
+  CurrentHealth: {fileID: 1804002008}
   Skills:
   - {fileID: 280848914}
   - {fileID: 2128527425}

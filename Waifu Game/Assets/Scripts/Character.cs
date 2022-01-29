@@ -28,8 +28,6 @@ public class Character : ScriptableObject
 
     public float ActionSpeed;
     [HideInInspector] public float CurrentActionSpeed;
-    [Range(0,1)] public float Armour;
-    [Range(0,1)] public float MagicResist;
 
     public float HealthGrowth;
 
@@ -48,9 +46,9 @@ public class Character : ScriptableObject
 
         public bool IsMultiAttack;
         public float Damage;
-        public float Accuracy;
-        public float CriticalStrikeChance;
-        public float CriticalStrikeMultiplier;
+        [Range(0,1)] public float Accuracy;
+        [Range(0,1)] public float CriticalStrikeChance;
+        [Range(1,1.5f)] public float CriticalStrikeMultiplier;
 
         public float DamageGrowth;
 
@@ -59,6 +57,40 @@ public class Character : ScriptableObject
         public void UseSkill()
         {
             CurrentCooldown = 0;
+
+            if (IsMultiAttack)
+            {
+                for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
+                {
+                    if (Battlefield.instance.RightCharacterPosition[i].character != null)
+                    {
+                        Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(CalculateDamage());
+                    }
+                }
+            }
+            else
+            {
+                Battlefield.instance.SelectedEnemy.TakeDamage(CalculateDamage());
+            }
+        }
+
+        public float CalculateDamage()
+        {
+            float roll = Random.Range(0, 1);
+            if(roll > Accuracy)
+            {
+                return 0;
+            }
+
+            roll = Random.Range(0, 1);
+            if(roll >CriticalStrikeChance)
+            {
+                return Damage * CriticalStrikeMultiplier;
+            }
+            else
+            {
+                return Damage;
+            }
         }
     }
 
@@ -77,6 +109,21 @@ public class Character : ScriptableObject
         CurrentUltimateGauge = 0;
 
         CurrentHealth = Health;
+    }
+
+    public void TakeDamage(float Damage)
+    {
+        CurrentHealth -= Damage;
+
+        if(CurrentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+
     }
 
     public void UseSkill(int SkillNumber)
