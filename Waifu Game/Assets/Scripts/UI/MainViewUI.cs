@@ -12,6 +12,8 @@ public class MainViewUI : MonoBehaviour
     [SerializeField] Button creditsButton;
     [SerializeField] Button quitButton;
 
+    [SerializeField] Button restartButton;
+
     [Space]
 
     [SerializeField] GameObject gatchaView;
@@ -42,6 +44,12 @@ public class MainViewUI : MonoBehaviour
         gatchaPageButton.onClick.AddListener(delegate { SwitchView(currentView, gatchaView); BackGroundCanvas.instance.SetActive(false); });
         creditsButton.onClick.AddListener(() => credits.SetActive(!credits.activeInHierarchy));
         quitButton.onClick.AddListener(() => Application.Quit());
+
+        restartButton.onClick.AddListener(delegate 
+        {
+            GameManager.instance.ResetGame();
+            Application.Quit();
+        });
     }
 
     public void SwitchView(GameObject oldView, GameObject newView)
