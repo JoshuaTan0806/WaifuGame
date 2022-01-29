@@ -10,6 +10,8 @@ public class CharSelector : MonoBehaviour
 
     [SerializeField] Button startButton;
 
+    EnemySelect enemySelect;
+
     public static CharSelector instance;
     private void Awake()
     {
@@ -17,6 +19,8 @@ public class CharSelector : MonoBehaviour
             Destroy(gameObject);
         else
             instance = this;
+
+        enemySelect = GetComponent<EnemySelect>();
     }
 
     private void Start()
@@ -45,7 +49,7 @@ public class CharSelector : MonoBehaviour
             }
 
             //Assign enemies
-
+            enemySelect.SelectEnemies(charSlots[0].charInSlot, charSlots[1].charInSlot, charSlots[2].charInSlot);
 
             //Start the battle
             Battlefield.instance.StartCombat();

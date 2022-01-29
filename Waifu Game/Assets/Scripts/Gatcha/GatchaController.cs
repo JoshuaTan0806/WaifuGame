@@ -27,7 +27,7 @@ public class GatchaController : MonoBehaviour
     public Character DoGatcha(bool allowDuplicates = true)
     {
         //Roll the character
-        Character unlocked = RollCharacter(allowDuplicates);
+        Character unlocked = RollCharacter(allowDuplicates, GameManager.instance.PlayerFaction);
         if (!unlocked)
         {
             Debug.LogError("Could not roll a character");
@@ -41,7 +41,7 @@ public class GatchaController : MonoBehaviour
     }
 
     //Roll a character
-    Character RollCharacter(bool allowDuplicates)
+    public Character RollCharacter(bool allowDuplicates, Faction faction)
     {
         Character toUnlock = null;
 
@@ -52,7 +52,7 @@ public class GatchaController : MonoBehaviour
         if (roll < 0)
         {
             //We rolled a super rare
-            toUnlock = GetRandomCharacter(Rarity.SuperRare, allowDuplicates);
+            toUnlock = GetRandomCharacter(Rarity.SuperRare, allowDuplicates, faction);
         }
         else
         {
@@ -60,24 +60,24 @@ public class GatchaController : MonoBehaviour
             if (roll < 0)
             {
                 //We rolled a rare
-                toUnlock = GetRandomCharacter(Rarity.Rare, allowDuplicates);
+                toUnlock = GetRandomCharacter(Rarity.Rare, allowDuplicates, faction);
             }
             else
             {
                 //We rolled a common
-                toUnlock = GetRandomCharacter(Rarity.Common, allowDuplicates);
+                toUnlock = GetRandomCharacter(Rarity.Common, allowDuplicates, faction);
             }
         }
         return toUnlock;
     }
     //Look through list of characters for ones with same rarity and return one of them
-    Character GetRandomCharacter(Rarity rarity, bool allowDuplicates)
+    Character GetRandomCharacter(Rarity rarity, bool allowDuplicates, Faction faction)
     {
         List<Character> availableChars = new List<Character>();
 
         foreach (Character c in GameManager.instance.everyCharacter)
         {
-            if (c.CardFaction == GameManager.instance.PlayerFaction)
+            if (c.CardFaction == faction)
                 if (c.CardRarity == rarity)
                 {
                     if (allowDuplicates == false)
@@ -88,7 +88,7 @@ public class GatchaController : MonoBehaviour
                 }
         }
 
-        if(availableChars.Count == 0)
+        if (availableChars.Count == 0)
             return null;
 
         return availableChars[Random.Range(0, availableChars.Count)];
@@ -99,8 +99,9 @@ public class GatchaController : MonoBehaviour
         foreach (Character character in GameManager.instance.everyCharacter)
         {
             if (character.Name == c.Name)
-                if (character.SkillLevel > 0)
-                    return true;
+                if (character.CardFaction == c.CardFaction)
+                    if (character.SkillLevel > 0)
+                        return true;
         }
 
         return false;

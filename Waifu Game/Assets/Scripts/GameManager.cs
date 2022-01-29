@@ -57,6 +57,9 @@ public class GameManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("Currency", currency);
+
+        ResetEnemySkill();
+
         SaveGame();
     }
 
@@ -120,6 +123,18 @@ public class GameManager : MonoBehaviour
                 everyCharacter[characterIndex].SkillLevel = int.Parse(lines[i + 2]);
 
                 characterIndex++;
+            }
+        }
+    }
+
+    public void ResetEnemySkill()
+    {
+        //Check each character and reset enemy skill levels
+        foreach (Character c in everyCharacter)
+        {
+            if (c.CardFaction != PlayerFaction)
+            {
+                c.SkillLevel = 0;
             }
         }
     }

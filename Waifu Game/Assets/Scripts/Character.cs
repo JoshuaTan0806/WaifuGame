@@ -172,11 +172,11 @@ public class Character : ScriptableObject
             roll = Random.Range(0, 1);
             if(roll > CriticalStrikeChance)
             {
-                return Random.Range(MinDamage[SkillLevel], MaxDamage[SkillLevel]) * CriticalStrikeMultiplier;
+                return Random.Range(MinDamage[SkillLevel-1], MaxDamage[SkillLevel - 1]) * CriticalStrikeMultiplier;
             }
             else
             {
-                return Random.Range(MinDamage[SkillLevel], MaxDamage[SkillLevel]) * CriticalStrikeMultiplier;
+                return Random.Range(MinDamage[SkillLevel - 1], MaxDamage[SkillLevel - 1]) * CriticalStrikeMultiplier;
             }
         }
     }
@@ -212,12 +212,12 @@ public class Character : ScriptableObject
 
     public void Win()
     {
-
+        GameManager.instance.ResetEnemySkill();
     }
 
     public void Lose()
     {
-
+        GameManager.instance.ResetEnemySkill();
     }
 
     public void Die()
