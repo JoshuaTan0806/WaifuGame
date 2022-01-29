@@ -5271,7 +5271,7 @@ MonoBehaviour:
   currencyText: {fileID: 423100184738334860}
   backButton: {fileID: 423100183515602657}
   unlockPreview: {fileID: 4449559236791794956}
-  getCoinsButton: {fileID: 0}
+  getCoinsButton: {fileID: 4655033431277265798}
 --- !u!1 &423100184082810454
 GameObject:
   m_ObjectHideFlags: 0
