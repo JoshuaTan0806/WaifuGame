@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        //LoadGame();
+        LoadGame();
 
         HasChosenFaction = PlayerPrefs.GetInt("HasChosenFaction");
         switch (HasChosenFaction)
@@ -81,6 +81,9 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
+        if (!File.Exists("PlayerData"))
+            return;
+
         StreamReader reader = new StreamReader("PlayerData");
         string text = reader.ReadToEnd();
 
@@ -94,6 +97,9 @@ public class GameManager : MonoBehaviour
         {
             if (lines[i].Contains("Character"))
             {
+                if (characterIndex >= everyCharacter.Count)
+                    break;
+
                 everyCharacter[characterIndex].Level = int.Parse(lines[i + 1]);
                 everyCharacter[characterIndex].SkillLevel = int.Parse(lines[i + 2]);
 
