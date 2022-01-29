@@ -17,8 +17,8 @@ public class Character : ScriptableObject
     [Header("Stats")]
     public string Name;
     public GameObject ChibiArt;
-    public Image SplashArt;
-    public Image SplashBackground;
+    public Sprite SplashArt;
+    public Sprite SplashBackground;
     public Rarity CardRarity;
     public Faction CardFaction;
     
