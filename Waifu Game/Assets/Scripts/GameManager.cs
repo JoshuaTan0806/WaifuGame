@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        currency = PlayerPrefs.GetInt("Currency");
+        currency = 100;//PlayerPrefs.GetInt("Currency");
     }
 
     private void OnApplicationQuit()
