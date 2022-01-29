@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasChosenFaction: 0
   PlayerFaction: 0
+  currency: 0
   everyCharacter:
   - {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
   - {fileID: 11400000, guid: 508a010911b506d43954177e778d91ae, type: 2}
@@ -65,3 +66,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61c505df90cdac64dbe7acb175eaceeb, type: 2}
   - {fileID: 11400000, guid: 5021dbeac22b7b74ead8e30b04aa0394, type: 2}
   - {fileID: 11400000, guid: 0442bcaec7af2ff4a8e69e8caca7f0e6, type: 2}
+  - {fileID: 11400000, guid: 05c5ac9e26ca4264ba20ed832d80e231, type: 2}
+  - {fileID: 11400000, guid: 501945a2959bc8b40a55a0592f6493e0, type: 2}
+  - {fileID: 11400000, guid: c49f30a4851277449bf26892aab0bcf0, type: 2}
+  - {fileID: 11400000, guid: 2d87a651d586d554580ff23518c27277, type: 2}
+  - {fileID: 11400000, guid: dcb071bde66ded74e9346e25fa7671c7, type: 2}
+  - {fileID: 11400000, guid: 2c1492479ace16b46a396f54aeba6c36, type: 2}

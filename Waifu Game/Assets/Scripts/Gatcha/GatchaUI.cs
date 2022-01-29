@@ -16,6 +16,8 @@ public class GatchaUI : MonoBehaviour
     [SerializeField] ParticleSystem skyBeamD;
     ParticleSystem skyBeam;
 
+    [SerializeField] TextMeshProUGUI currencyText;
+
     [Space]
 
     [SerializeField] Button backButton;
@@ -32,11 +34,16 @@ public class GatchaUI : MonoBehaviour
         {
             MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject);
         });
+
+        currencyText.text = GameManager.instance.currency.ToString();
     }
 
     private void OnEnable()
     {
         HideCardPreview();
+
+        if(GameManager.instance)
+            currencyText.text = GameManager.instance.currency.ToString();
     }
     private void OnDisable()
     {
@@ -45,6 +52,16 @@ public class GatchaUI : MonoBehaviour
     void RollGatcha()
     {
         HideCardPreview();
+
+        if(GameManager.instance.currency - GatchaController.instance.rollGatchaCost < 0)
+        {
+            //Cannot afford rolling
+
+            return;
+        }
+
+        GameManager.instance.currency -= GatchaController.instance.rollGatchaCost;
+        currencyText.text = GameManager.instance.currency.ToString();
 
         buttonParticles?.Play();
 
@@ -71,7 +88,7 @@ public class GatchaUI : MonoBehaviour
             yield break;
 
         unlockPreview.parent.SetActive(true);
-        unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name);
+        unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name, unlocked.SkillLevel.ToString());
 
 
         float elapsed = 0;

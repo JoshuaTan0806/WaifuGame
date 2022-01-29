@@ -8,6 +8,9 @@ public class GatchaController : MonoBehaviour
     [SerializeField] float rareChance = 20;
     [SerializeField] float superRareChance = 5;
 
+    [Space]
+
+    public int rollGatchaCost = 100;
 
     public static GatchaController instance;
     private void Awake()
@@ -45,7 +48,7 @@ public class GatchaController : MonoBehaviour
         Character toUnlock = null;
 
         float roll = Random.Range(0, commonChance + rareChance + superRareChance);
-        //Debug.Log($"Rolled a: {roll}");
+        Debug.Log($"Rolled a: {roll}");
 
         roll -= superRareChance;
         if (roll < 0)

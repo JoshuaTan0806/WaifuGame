@@ -217,6 +217,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &86116244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,6 +1027,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 8a10c8eec0cd35b4f9c3a98f9db8051b, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &320929063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1734,6 +1736,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: c378d154cecdd44439de1322c9838e06, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &645731328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1883,6 +1886,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5370886759084044870, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8356651372969394803, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2507,6 +2514,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: e15c8bc7e81ff784da7cd23223105ef1, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &943047722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3803,6 +3811,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 454f2c30b2f0e794ba0d6fc75ccf8b99, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &1648992815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4255,6 +4264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasChosenFaction: 0
   PlayerFaction: 0
+  currency: 0
   everyCharacter: []
 --- !u!4 &1834955839
 Transform:
@@ -4534,6 +4544,7 @@ MonoBehaviour:
   character: {fileID: 11400000, guid: 2a60dccac10642143bea096eee720b13, type: 2}
   ActionSpeedTimer: {fileID: 0}
   CurrentHealth: {fileID: 0}
+  DamageValue: {fileID: 0}
 --- !u!114 &2059879254
 MonoBehaviour:
   m_ObjectHideFlags: 0

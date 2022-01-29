@@ -38,7 +38,7 @@ public class CharacterDisplayer : MonoBehaviour
             {
                 //We have this card
                 PreviewCard card = Instantiate(cardPreviewPrefab, cardHolder);
-                card.SetCard(c.SplashBackground, c.SplashArt, c.Name);
+                card.SetCard(c.SplashBackground, c.SplashArt, c.Name, c.SkillLevel.ToString());
 
                 Button b = card.GetComponent<Button>();
 
