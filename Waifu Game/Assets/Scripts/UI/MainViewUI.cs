@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.IO;
 
 public class MainViewUI : MonoBehaviour
 {
@@ -42,7 +41,6 @@ public class MainViewUI : MonoBehaviour
         startRunButton.onClick.AddListener(() => SwitchView(currentView, characterSelectView));
         gatchaPageButton.onClick.AddListener(delegate { SwitchView(currentView, gatchaView); BackGroundCanvas.instance.SetActive(false); });
         creditsButton.onClick.AddListener(() => credits.SetActive(!credits.activeInHierarchy));
-        quitButton.onClick.AddListener(() => SaveGame());
         quitButton.onClick.AddListener(() => Application.Quit());
     }
 
@@ -54,22 +52,5 @@ public class MainViewUI : MonoBehaviour
         currentView = newView;
 
         OnViewChange?.Invoke();
-    }
-
-    public void SaveGame()
-    {
-        for (int i = 0; i < GameManager.instance.everyCharacter.Count; i++)
-        {
-            Character character = GameManager.instance.everyCharacter[i];
-
-            File.AppendAllText
-                (
-                "CharacterStats", "Character " + i.ToString() + "\n" +
-
-                character.Level + "\n" +
-                character.SkillLevel + "\n\n"
-
-                );
-        }
     }
 }
