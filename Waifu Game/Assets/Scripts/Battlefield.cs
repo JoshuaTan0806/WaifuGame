@@ -4,13 +4,31 @@ using UnityEngine;
 
 public class Battlefield : MonoBehaviour
 {
+    public static Battlefield instance;
+
     public Spot[] LeftCharacterPosition;
     public Spot[] RightCharacterPosition;
+
+    public Character SelectedAlly;
+    public Character SelectedEnemy;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCombat();
     }
 
     // Update is called once per frame
@@ -46,6 +64,9 @@ public class Battlefield : MonoBehaviour
 
     public void StartCombat()
     {
+        SelectedAlly = LeftCharacterPosition[0].character;
+        SelectedEnemy = RightCharacterPosition[0].character;
+
         if (LeftCharacterPosition.Length > 0)
         {
             for (int i = 0; i < LeftCharacterPosition.Length; i++)

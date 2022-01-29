@@ -14,39 +14,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Level: 1
   SkillLevel: 0
+  Name: 
+  ChibiArt: {fileID: 0}
+  SplashArt: {fileID: 0}
+  SplashBackground: {fileID: 0}
   CardRarity: 2
   CardFaction: 1
   Health: 100
   Armour: 0.1
   MagicResist: 0.1
   HealthGrowth: 5
+  Skills:
+  - Cooldown: 0
+    CurrentCooldown: 0
+    IsMultiAttack: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
+  - Cooldown: 0
+    CurrentCooldown: 0
+    IsMultiAttack: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
+  - Cooldown: 0
+    CurrentCooldown: 0
+    IsMultiAttack: 0
+    Damage: 0
+    Accuracy: 0
+    CriticalStrikeChance: 0
+    CriticalStrikeMultiplier: 0
+    DamageGrowth: 0
+    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   UltimateGauge: 5
   CurrentUltimateGauge: 0
-  Skills:
-  - IsUltimate: 0
-    IsMultiAttack: 0
+  Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    IsMultiAttack: 0
     Damage: 0
     Accuracy: 0
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 0
     DamageGrowth: 0
-  - IsUltimate: 0
-    IsMultiAttack: 0
-    Cooldown: 0
-    CurrentCooldown: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
-  - IsUltimate: 0
-    IsMultiAttack: 0
-    Cooldown: 0
-    CurrentCooldown: 0
-    Damage: 0
-    Accuracy: 0
-    CriticalStrikeChance: 0
-    CriticalStrikeMultiplier: 0
-    DamageGrowth: 0
+    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
