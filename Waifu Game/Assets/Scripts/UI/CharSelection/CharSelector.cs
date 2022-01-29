@@ -38,7 +38,10 @@ public class CharSelector : MonoBehaviour
             {
                 Battlefield.instance.LeftCharacterPosition[i].character = charSlots[i].charInSlot;
 
-                Battlefield.instance.LeftCharacterPosition[i].chibiSprite.sprite = charSlots[i].charInSlot.ChibiSpriteArt;
+                if(charSlots[i].charInSlot.ChibiSpriteArt)
+                    Battlefield.instance.LeftCharacterPosition[i].chibiSprite.sprite = charSlots[i].charInSlot.ChibiSpriteArt;
+                else
+                    Battlefield.instance.LeftCharacterPosition[i].chibiSprite.sprite = charSlots[i].charInSlot.SplashArt;
             }
 
             //Assign enemies
