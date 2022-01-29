@@ -29,7 +29,8 @@ MonoBehaviour:
   - Cooldown: 0
     CurrentCooldown: 99.3931
     IsMultiAttack: 0
-    Damage: 5
+    MaxDamage: 2
+    MinDamage: 5
     Accuracy: 0.95
     CriticalStrikeChance: 0.3
     CriticalStrikeMultiplier: 1.2
@@ -38,7 +39,8 @@ MonoBehaviour:
   - Cooldown: 5
     CurrentCooldown: 51.127174
     IsMultiAttack: 0
-    Damage: 100
+    MaxDamage: 2
+    MinDamage: 5
     Accuracy: 0.95
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.5
@@ -47,7 +49,8 @@ MonoBehaviour:
   - Cooldown: 5
     CurrentCooldown: 77.98889
     IsMultiAttack: 1
-    Damage: 2
+    MaxDamage: 2
+    MinDamage: 3
     Accuracy: 0.5
     CriticalStrikeChance: 0.8
     CriticalStrikeMultiplier: 1.2
@@ -59,7 +62,8 @@ MonoBehaviour:
     Cooldown: 0
     CurrentCooldown: 0
     IsMultiAttack: 1
-    Damage: 10
+    MaxDamage: 0
+    MinDamage: 0
     Accuracy: 0.95
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.2

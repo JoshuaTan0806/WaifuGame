@@ -21,16 +21,16 @@ MonoBehaviour:
   CardRarity: 2
   CardFaction: 1
   Health: 100
+  CurrentHealth: 88
   ActionSpeed: 3
   CurrentActionSpeed: 50.289383
-  Armour: 0.1
-  MagicResist: 0.1
   HealthGrowth: 5
   Skills:
   - Cooldown: 5
     CurrentCooldown: 13.906232
     IsMultiAttack: 0
-    Damage: 0
+    MaxDamage: 2
+    MinDamage: 5
     Accuracy: 0
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 0
@@ -39,7 +39,8 @@ MonoBehaviour:
   - Cooldown: 5
     CurrentCooldown: 13.906232
     IsMultiAttack: 0
-    Damage: 0
+    MaxDamage: 2
+    MinDamage: 5
     Accuracy: 0
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 0
@@ -48,7 +49,8 @@ MonoBehaviour:
   - Cooldown: 5
     CurrentCooldown: 13.906232
     IsMultiAttack: 0
-    Damage: 0
+    MaxDamage: 2
+    MinDamage: 3
     Accuracy: 0
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 0
@@ -60,7 +62,8 @@ MonoBehaviour:
     Cooldown: 0
     CurrentCooldown: 0
     IsMultiAttack: 0
-    Damage: 0
+    MaxDamage: 0
+    MinDamage: 0
     Accuracy: 0
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 0
