@@ -48,3 +48,8 @@ MonoBehaviour:
   PlayerFaction: 0
   everyCharacter:
   - {fileID: 11400000, guid: 1d8f2985008106844b594473ff0dbf44, type: 2}
+  - {fileID: 11400000, guid: 508a010911b506d43954177e778d91ae, type: 2}
+  - {fileID: 11400000, guid: 3abdaec9da0efb043b65aa1533119ffb, type: 2}
+  - {fileID: 11400000, guid: dccb487ac6a053142b43a3daf3e61027, type: 2}
+  - {fileID: 11400000, guid: ef42ed0e031b3ba48a92d50cee1d4f3f, type: 2}
+  - {fileID: 11400000, guid: ea236478ff493c342bee983439c914c7, type: 2}

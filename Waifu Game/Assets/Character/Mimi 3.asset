@@ -16,11 +16,12 @@ MonoBehaviour:
   SkillLevel: 0
   Name: 
   ChibiArt: {fileID: 0}
-  SplashArt: {fileID: 0}
+  SplashArt: {fileID: 21300000, guid: 6211990fded57ca49b1e8ad84d988709, type: 3}
   SplashBackground: {fileID: 0}
-  CardRarity: 2
+  CardRarity: 1
   CardFaction: 1
   Health: 100
+  CurrentHealth: 0
   ActionSpeed: 3
   CurrentActionSpeed: 2.8328657
   Armour: 0.1
