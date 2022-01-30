@@ -25,7 +25,7 @@ MonoBehaviour:
   CurrentHealth: 100
   ActionSpeed: 4
   CurrentActionSpeed: 51.127174
-  HealthGrowth: 5
+  HealthGrowth: 2
   Skills:
   - Cooldown: 0
     CurrentCooldown: 99.3931

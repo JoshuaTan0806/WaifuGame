@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wiz L 5
   m_EditorClassIdentifier: 
   Level: 1
-  SkillLevel: 1
+  SkillLevel: 0
   CurrentExperience: 0
   Name: Wiz
   ChibiSpriteArt: {fileID: 0}
@@ -25,7 +25,7 @@ MonoBehaviour:
   CurrentHealth: 115
   ActionSpeed: 5
   CurrentActionSpeed: 2.786827
-  HealthGrowth: 10
+  HealthGrowth: 6
   Skills:
   - Cooldown: 0
     CurrentCooldown: 13.087704

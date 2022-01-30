@@ -22,15 +22,15 @@ MonoBehaviour:
   CardRarity: 0
   CardFaction: 0
   Health: 75
-  CurrentHealth: 100
+  CurrentHealth: 75
   ActionSpeed: 4
-  CurrentActionSpeed: 39.780895
+  CurrentActionSpeed: 55.785202
   HealthGrowth: 2
   Skills:
   - Cooldown: 0
-    CurrentCooldown: 35.53182
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 16.004318
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 0
     MinDamage:
     - 10
@@ -49,9 +49,9 @@ MonoBehaviour:
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 35.53182
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 26.00436
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 0
     MinDamage:
     - 15
@@ -70,9 +70,9 @@ MonoBehaviour:
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 35.53182
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 26.00436
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 0
     MinDamage:
     - 15
@@ -95,8 +95,8 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 1
     MinDamage:
     - 10

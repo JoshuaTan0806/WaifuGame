@@ -25,7 +25,7 @@ MonoBehaviour:
   CurrentHealth: 0
   ActionSpeed: 4
   CurrentActionSpeed: 0
-  HealthGrowth: 10
+  HealthGrowth: 6
   Skills:
   - Cooldown: 0
     CurrentCooldown: 0
@@ -110,7 +110,7 @@ MonoBehaviour:
     - 46
     - 60
     - 60
-    Accuracy: 0.9
+    Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 427a7b2c0e8cb9f4e86784691e10827a, type: 3}
