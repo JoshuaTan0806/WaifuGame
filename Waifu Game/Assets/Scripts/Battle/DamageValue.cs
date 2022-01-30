@@ -13,6 +13,7 @@ public class DamageValue : MonoBehaviour
     void Start()
     {
         text = GetComponentInParent<TextMeshProUGUI>();
+        Color = new Color(1, 1, 1, 1);
         a = text.color.a;
     }
 
