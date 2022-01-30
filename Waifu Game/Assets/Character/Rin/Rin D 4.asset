@@ -15,12 +15,12 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Rin
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 36d30fec134df3f4b8683ead3b48ee7b, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
   CardRarity: 1
   CardFaction: 1
-  Health: 100
+  Health: 140
   CurrentHealth: 88
   ActionSpeed: 5
   CurrentActionSpeed: 50.289383
@@ -28,60 +28,63 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 11
+    - 12
+    - 13
+    - 14
+    - 15
     Accuracy: 0.5
     CriticalStrikeChance: 0.9
     CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 17
+    - 18
+    - 18
+    - 18
+    - 20
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 17
+    - 18
+    - 18
+    - 18
+    - 20
     Accuracy: 0.5
     CriticalStrikeChance: 0.9
     CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 5
+    - 5
+    - 6
+    - 7
+    - 8
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 5
+    - 5
+    - 6
+    - 7
+    - 8
     Accuracy: 0.5
     CriticalStrikeChance: 0.9
     CriticalStrikeMultiplier: 1.5
@@ -91,6 +94,7 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
@@ -100,11 +104,11 @@ MonoBehaviour:
     - 0
     - 0
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 50
+    - 55
+    - 60
+    - 70
+    - 80
     Accuracy: 0.5
     CriticalStrikeChance: 0.9
     CriticalStrikeMultiplier: 1.5

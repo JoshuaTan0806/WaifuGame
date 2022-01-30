@@ -15,12 +15,12 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Valkyrie
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 2f9794e906d3a814ba7934d651120a88, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
   CardFaction: 0
-  Health: 100
+  Health: 110
   CurrentHealth: 0
   ActionSpeed: 4
   CurrentActionSpeed: 50.289383
@@ -28,60 +28,63 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 12
+    - 13
+    - 13
+    - 14
+    - 15
     Accuracy: 0.9
     CriticalStrikeChance: 0.3
     CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 11
+    - 13
+    - 14
+    - 15
+    - 16
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 16
+    - 17
+    - 17
+    - 18
+    - 19
     Accuracy: 0.9
     CriticalStrikeChance: 0.3
     CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 13
+    - 13
+    - 14
+    - 15
+    - 16
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 13
+    - 13
+    - 14
+    - 15
+    - 16
     Accuracy: 0.9
     CriticalStrikeChance: 0.3
     CriticalStrikeMultiplier: 1.25
@@ -91,20 +94,21 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
-    IsMultiAttack: 0
+    IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 18
+    - 18
+    - 19
+    - 20
+    - 21
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 19
+    - 19
+    - 19
+    - 20
+    - 22
     Accuracy: 1
     CriticalStrikeChance: 0.09
     CriticalStrikeMultiplier: 1.5

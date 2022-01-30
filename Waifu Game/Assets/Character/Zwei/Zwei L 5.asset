@@ -15,12 +15,12 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Zwei
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 57eb9f4f75b27b149ab1a2fab8106019, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9f8ce578420102443b708ad1ee73d652, type: 3}
   CardRarity: 2
   CardFaction: 0
-  Health: 100
+  Health: 150
   CurrentHealth: 0
   ActionSpeed: 4
   CurrentActionSpeed: 0
@@ -28,60 +28,63 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 10
+    - 10
+    - 10
+    - 20
+    - 20
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 15
+    - 15
+    - 15
+    - 30
+    - 30
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}
   - Cooldown: 10
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 20
+    - 25
+    - 25
+    - 30
+    - 70
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 30
+    - 40
+    - 50
+    - 60
+    - 80
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 0}
   - Cooldown: 10
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 20
+    - 25
+    - 25
+    - 30
+    - 70
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 30
+    - 40
+    - 50
+    - 60
+    - 80
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
@@ -91,20 +94,21 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 25
+    - 35
+    - 46
+    - 50
+    - 50
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 25
+    - 35
+    - 46
+    - 60
+    - 60
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1

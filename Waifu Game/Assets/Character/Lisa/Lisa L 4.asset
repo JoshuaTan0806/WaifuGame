@@ -15,13 +15,12 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Lisa
-  ChibiArt: {fileID: 0}
   ChibiSpriteArt: {fileID: 21300000, guid: 5bffb6b70822bbe449dae6bc50dbb631, type: 3}
   SplashArt: {fileID: 21300000, guid: 0bd5788707522ae46a8a6a28d7bf36ef, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
   CardRarity: 1
   CardFaction: 0
-  Health: 100
+  Health: 90
   CurrentHealth: 0
   ActionSpeed: 4
   CurrentActionSpeed: 4.955021
@@ -33,17 +32,17 @@ MonoBehaviour:
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 9
+    - 9
+    - 10
+    - 10
+    - 11
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 13
+    - 14
+    - 15
+    - 16
+    - 17
     Accuracy: 0.9
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.25
@@ -54,17 +53,17 @@ MonoBehaviour:
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 14
+    - 15
+    - 15
+    - 16
+    - 17
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 16
+    - 17
+    - 18
+    - 19
+    - 20
     Accuracy: 0.9
     CriticalStrikeChance: 0.5
     CriticalStrikeMultiplier: 1.25
@@ -75,17 +74,17 @@ MonoBehaviour:
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 9
+    - 9
+    - 10
+    - 10
+    - 11
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 10
+    - 10
+    - 11
+    - 11
+    - 14
     Accuracy: 0.8
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.25
@@ -99,17 +98,17 @@ MonoBehaviour:
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 16
+    - 16
+    - 17
+    - 17
+    - 17
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 18
+    - 18
+    - 20
+    - 20
+    - 20
     Accuracy: 1
     CriticalStrikeChance: 0.5
     CriticalStrikeMultiplier: 1.25

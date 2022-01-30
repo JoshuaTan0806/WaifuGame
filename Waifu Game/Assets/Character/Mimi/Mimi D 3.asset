@@ -15,12 +15,12 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Mimi
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 6211990fded57ca49b1e8ad84d988709, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
   CardFaction: 1
-  Health: 100
+  Health: 75
   CurrentHealth: 100
   ActionSpeed: 4
   CurrentActionSpeed: 39.780895
@@ -28,60 +28,63 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 35.53182
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 10
+    - 10
+    - 12
+    - 14
+    - 15
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 11
+    - 11
+    - 13
+    - 15
+    - 15
     Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 35.53182
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
     Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 35.53182
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 15
+    - 16
+    - 17
+    - 18
+    - 19
     Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
@@ -91,20 +94,21 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
     Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
