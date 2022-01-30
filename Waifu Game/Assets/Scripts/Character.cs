@@ -8,12 +8,13 @@ using TMPro;
 public class Character : ScriptableObject
 {
     [Header("Global")]
-    public static int MaxLevel = 25;
+    public static int MaxLevel = 100;
     public static int MaxSkillLevel = 5;
 
     [Header("Player Unlocks")]
     public int Level = 1;
     public int SkillLevel = 0;
+    public float CurrentExperience = 0;
 
     [Header("Stats")]
     public string Name;
@@ -136,10 +137,13 @@ public class Character : ScriptableObject
                 {
                     int CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
                     int counter = 0;
-                    while(Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character == null && counter < 100)
+                    while(Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character == null)
                     {
                         CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
                         counter++;
+
+                        if (counter < 100)
+                            return;
                     }
 
                     float damage = CalculateDamage();
@@ -220,6 +224,10 @@ public class Character : ScriptableObject
         GameManager.instance.ResetEnemySkill();
 
         AwardCurrency(Rarity.Common);
+        Level++;
+
+        if (Level >= MaxLevel)
+            Level = MaxLevel;
 
         Battlefield.instance.nextWaveButton.gameObject.SetActive(true);
     }
@@ -356,4 +364,19 @@ public class Character : ScriptableObject
         CurrentUltimateGauge++;
     }
 
+    public void GainExperience()
+    {
+        CurrentExperience++;
+
+        if(CurrentExperience >= 5)
+        {
+            CurrentExperience = 0;
+            Level++;
+
+            if(Level >= MaxLevel)
+            {
+                Level = MaxLevel;
+            }
+        }
+    }
 }

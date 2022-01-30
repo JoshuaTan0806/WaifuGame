@@ -19,6 +19,8 @@ public class Spot : MonoBehaviour
     [HideInInspector]
     public Image chibiSprite;
 
+    public Image arrow;
+
     private void Awake()
     {
         chibiSprite = GetComponent<Image>();
@@ -70,6 +72,15 @@ public class Spot : MonoBehaviour
             {
                 character.UseSkill(i);
             }
+        }
+
+        if(character == Battlefield.instance.SelectedAlly || character == Battlefield.instance.SelectedEnemy)
+        {
+            arrow.gameObject.SetActive(true);
+        }
+        else
+        {
+            arrow.gameObject.SetActive(false);
         }
     }
 }
