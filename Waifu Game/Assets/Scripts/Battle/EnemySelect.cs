@@ -21,11 +21,11 @@ public class EnemySelect : MonoBehaviour
         }
 
         //Buff them slightly?
-        int buffTimes = Random.Range(1, 5);
-        for (int i = 0; i < buffTimes; i++)
-        {
-            enemies[Random.Range(0, enemies.Length)].SkillLevel++;
-        }
+        //int buffTimes = Random.Range(1, 0);
+        //for (int i = 0; i < buffTimes; i++)
+        //{
+        //    enemies[Random.Range(0, enemies.Length)].SkillLevel++;
+        //}
 
         //Assign coin values
 
