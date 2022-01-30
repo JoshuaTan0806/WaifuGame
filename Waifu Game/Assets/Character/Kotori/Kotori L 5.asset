@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
   m_Name: Kotori L 5
   m_EditorClassIdentifier: 
-  Level: 1
-  SkillLevel: 0
+  Level: 2
+  SkillLevel: 5
   CurrentExperience: 0
   Name: Kotori
   ChibiSpriteArt: {fileID: 21300000, guid: d5bb13b5d6bd47e4f9feac685267860d, type: 3}
@@ -22,37 +22,39 @@ MonoBehaviour:
   CardRarity: 2
   CardFaction: 0
   Health: 130
-  CurrentHealth: 100
+  CurrentHealth: 15.09465
   ActionSpeed: 3
-  CurrentActionSpeed: 14.459669
+  CurrentActionSpeed: 2.5367115
   HealthGrowth: 6
   Skills:
   - Cooldown: 0
-    CurrentCooldown: 18.381912
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 5.681876
+    isAlly: 1
+    SkillLevel: 5
     IsMultiAttack: 0
+    HitTwice: 1
     MinDamage:
-    - 16
-    - 17
-    - 18
-    - 20
-    - 21
+    - 8
+    - 8
+    - 9
+    - 9
+    - 10
     MaxDamage:
-    - 20
-    - 21
-    - 22
-    - 23
-    - 24
+    - 10
+    - 10
+    - 11
+    - 11
+    - 12
     Accuracy: 0.8
     CriticalStrikeChance: 0.2
     CriticalStrikeMultiplier: 1.5
-    Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
+    Icon: {fileID: 21300000, guid: 329bf641a41d8cd4c86bb79c176a6328, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 32.51619
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 29.756596
+    isAlly: 1
+    SkillLevel: 5
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 13
     - 15
@@ -70,10 +72,11 @@ MonoBehaviour:
     CriticalStrikeMultiplier: 1.5
     Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 14.459669
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 29.756596
+    isAlly: 1
+    SkillLevel: 5
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 18
     - 18
@@ -95,22 +98,23 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    isAlly: 1
+    SkillLevel: 5
     IsMultiAttack: 0
+    HitTwice: 1
     MinDamage:
-    - 16
-    - 17
-    - 18
-    - 19
+    - 8
+    - 9
+    - 10
+    - 11
     - 50
     MaxDamage:
-    - 18
-    - 19
-    - 20
-    - 21
-    - 50
+    - 10
+    - 11
+    - 12
+    - 13
+    - 60
     Accuracy: 1
     CriticalStrikeChance: 0.9
     CriticalStrikeMultiplier: 1.5
-    Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
+    Icon: {fileID: 21300000, guid: 329bf641a41d8cd4c86bb79c176a6328, type: 3}
