@@ -230,10 +230,10 @@ public class Character : ScriptableObject
         {
             if(Battlefield.instance.LeftCharacterPosition[i].character != null)
             {
-                Level++;
+                Battlefield.instance.LeftCharacterPosition[i].character.Level++;
 
-                if (Level >= MaxLevel)
-                    Level = MaxLevel;
+                if (Battlefield.instance.LeftCharacterPosition[i].character.Level >= MaxLevel)
+                    Battlefield.instance.LeftCharacterPosition[i].character.Level = MaxLevel;
             }
         }
 
