@@ -142,7 +142,7 @@ public class Character : ScriptableObject
                         CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
                         counter++;
 
-                        if (counter < 100)
+                        if (counter > 100)
                             return;
                     }
 
