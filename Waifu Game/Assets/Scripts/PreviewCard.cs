@@ -11,6 +11,7 @@ public class PreviewCard : MonoBehaviour
     public Image splashArt;
     public TextMeshProUGUI titleTxt;
     public TextMeshProUGUI skillLevelTxt;
+    public TextMeshProUGUI levelTxt;
 
     [Space]
 
@@ -19,13 +20,15 @@ public class PreviewCard : MonoBehaviour
     public Image fourStar;
     public Image fiveStar;
 
-    public void SetCard(Sprite BackGround, Sprite SplashArt, string title, Rarity rarity, string LevelText = null)
+    public void SetCard(Sprite BackGround, Sprite SplashArt, string title, Rarity rarity, string SkillLevelText = null, string LevelText = null)
     {
         backGround.sprite = BackGround;
         splashArt.sprite = SplashArt;
         titleTxt.SetText(title);
-        if(LevelText != null)
-            skillLevelTxt.SetText($"LVL:{LevelText}");
+        if(SkillLevelText != null)
+            skillLevelTxt.SetText(SkillLevelText);
+        if (LevelText != null)
+            levelTxt.SetText($"Lvl:{LevelText}");
 
         fourStar.enabled = false;
         fiveStar.enabled = false;

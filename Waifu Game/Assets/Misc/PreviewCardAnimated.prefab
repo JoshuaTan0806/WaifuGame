@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3551287276897190727, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4463718046464476098, guid: e541c99519cf8b349ab568f35da2b65b, type: 3}
       propertyPath: m_text
       value: NAN
