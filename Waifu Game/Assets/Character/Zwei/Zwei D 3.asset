@@ -110,7 +110,7 @@ MonoBehaviour:
     - 10
     - 10
     - 20
-    Accuracy: 0.9
+    Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
     Icon: {fileID: 21300000, guid: 427a7b2c0e8cb9f4e86784691e10827a, type: 3}

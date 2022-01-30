@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wiz L 3
   m_EditorClassIdentifier: 
   Level: 1
-  SkillLevel: 2
+  SkillLevel: 0
   CurrentExperience: 0
   Name: Wiz
   ChibiSpriteArt: {fileID: 0}

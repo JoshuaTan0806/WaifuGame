@@ -162,7 +162,6 @@ public class Character : ScriptableObject
                     Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character.TakeDamage(damage);
                 }
             }
-
         }
 
         public float CalculateDamage()
