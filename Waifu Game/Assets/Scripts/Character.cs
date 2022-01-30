@@ -137,10 +137,13 @@ public class Character : ScriptableObject
                 {
                     int CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
                     int counter = 0;
-                    while(Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character == null && counter < 100)
+                    while(Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character == null)
                     {
                         CharacterToAttack = Random.Range(0, Battlefield.instance.LeftCharacterPosition.Length);
                         counter++;
+
+                        if (counter < 100)
+                            return;
                     }
 
                     float damage = CalculateDamage();
