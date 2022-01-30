@@ -42,7 +42,11 @@ public class Battlefield : MonoBehaviour
     {
         nextWaveButton.onClick.AddListener(delegate { CharSelector.instance.enemySelect.SelectEnemies(); StartCombat(false); });
 
-        mainMenuButton.onClick.AddListener(() => MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject));
+        mainMenuButton.onClick.AddListener(delegate 
+        {
+            MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject); 
+            BackGroundCanvas.instance.SetActive(true); 
+        });
 
         nextWaveButton.gameObject.SetActive(false);
         mainMenuButton.gameObject.SetActive(false);

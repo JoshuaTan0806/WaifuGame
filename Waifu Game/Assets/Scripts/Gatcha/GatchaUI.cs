@@ -28,6 +28,8 @@ public class GatchaUI : MonoBehaviour
 
     [SerializeField] PreviewCard unlockPreview;
 
+    [SerializeField] GameObject duplicateObject;
+
     [Header("Debug")]
 
     [SerializeField] Button getCoinsButton;
@@ -83,6 +85,7 @@ public class GatchaUI : MonoBehaviour
 
         backButton.gameObject.SetActive(false);
         rollGatchaButton.gameObject.SetActive(false);
+        duplicateObject.SetActive(false);
     }
     IEnumerator RollAfterDelay(float waitSeconds)
     {
@@ -98,6 +101,16 @@ public class GatchaUI : MonoBehaviour
 
         if (!unlocked)
             yield break;
+
+        //we have maxed out this character so get some currency back
+        if (unlocked.SkillLevel > Character.MaxSkillLevel)
+        {
+            unlocked.SkillLevel = Character.MaxSkillLevel;
+
+            duplicateObject.SetActive(true);
+
+            GameManager.instance.AddCurrency(80);
+        }
 
         unlockPreview.parent.SetActive(true);
         unlockPreview.SetCard(unlocked.SplashBackground, unlocked.SplashArt, unlocked.Name, unlocked.CardRarity, $"Skill:{unlocked.SkillLevel}", unlocked.Level.ToString());
@@ -119,6 +132,12 @@ public class GatchaUI : MonoBehaviour
 
         backButton.gameObject.SetActive(true);
         rollGatchaButton.gameObject.SetActive(true);
+
+        currencyText.text = GameManager.instance.currency.ToString();
+
+        yield return new WaitForSeconds(2.5f);
+
+        duplicateObject.SetActive(false);
     }
 
     void HideCardPreview()

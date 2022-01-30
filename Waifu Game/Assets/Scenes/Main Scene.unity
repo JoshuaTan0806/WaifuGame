@@ -3465,6 +3465,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GatchaController
       objectReference: {fileID: 0}
+    - target: {fileID: 4545431864894065210, guid: ad2e7868dd58d0b4b8e5df4f6feba2f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad2e7868dd58d0b4b8e5df4f6feba2f0, type: 3}
 --- !u!1001 &2078380461
