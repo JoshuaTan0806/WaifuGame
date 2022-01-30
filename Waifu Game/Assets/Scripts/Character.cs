@@ -8,12 +8,13 @@ using TMPro;
 public class Character : ScriptableObject
 {
     [Header("Global")]
-    public static int MaxLevel = 25;
+    public static int MaxLevel = 100;
     public static int MaxSkillLevel = 5;
 
     [Header("Player Unlocks")]
     public int Level = 1;
     public int SkillLevel = 0;
+    public float CurrentExperience = 0;
 
     [Header("Stats")]
     public string Name;
@@ -220,6 +221,10 @@ public class Character : ScriptableObject
         GameManager.instance.ResetEnemySkill();
 
         AwardCurrency(Rarity.Common);
+        Level++;
+
+        if (Level >= MaxLevel)
+            Level = MaxLevel;
 
         Battlefield.instance.nextWaveButton.gameObject.SetActive(true);
     }
@@ -356,4 +361,19 @@ public class Character : ScriptableObject
         CurrentUltimateGauge++;
     }
 
+    public void GainExperience()
+    {
+        CurrentExperience++;
+
+        if(CurrentExperience >= 5)
+        {
+            CurrentExperience = 0;
+            Level++;
+
+            if(Level >= MaxLevel)
+            {
+                Level = MaxLevel;
+            }
+        }
+    }
 }
