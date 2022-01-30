@@ -241,6 +241,8 @@ public class Character : ScriptableObject
 
     public void Die()
     {
+        CurrentHealth = Health;
+
         //If an ally
         for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
         {
