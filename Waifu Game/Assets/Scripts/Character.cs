@@ -202,7 +202,9 @@ public class Character : ScriptableObject
             Skills[i].isAlly = IsAlly();
         }
 
-        
+
+        Ultimate.isAlly = IsAlly();
+        Ultimate.SkillLevel = SkillLevel;
         CurrentUltimateGauge = 0;
 
         if(resetHealth)
