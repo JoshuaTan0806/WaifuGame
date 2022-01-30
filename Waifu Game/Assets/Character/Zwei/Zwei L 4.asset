@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zwei L 4
   m_EditorClassIdentifier: 
   Level: 1
-  SkillLevel: 0
+  SkillLevel: 2
   CurrentExperience: 0
   Name: Zwei
   ChibiSpriteArt: {fileID: 21300000, guid: 994230a6fa567014295b9cc23b18c7d8, type: 3}
@@ -22,15 +22,15 @@ MonoBehaviour:
   CardRarity: 1
   CardFaction: 0
   Health: 120
-  CurrentHealth: 0
+  CurrentHealth: 120
   ActionSpeed: 4
-  CurrentActionSpeed: 0
+  CurrentActionSpeed: 3.1076543
   HealthGrowth: 4
   Skills:
   - Cooldown: 0
-    CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 30.01345
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 1
     MinDamage:
     - 6
@@ -47,11 +47,11 @@ MonoBehaviour:
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 427a7b2c0e8cb9f4e86784691e10827a, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 8.129048
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 0
     MinDamage:
     - 16
@@ -68,11 +68,11 @@ MonoBehaviour:
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    CurrentCooldown: 13.855283
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 0
     MinDamage:
     - 18
@@ -89,14 +89,14 @@ MonoBehaviour:
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   UltimateGauge: 5
   CurrentUltimateGauge: 0
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
-    isAlly: 0
-    SkillLevel: 0
+    isAlly: 1
+    SkillLevel: 1
     IsMultiAttack: 1
     MinDamage:
     - 14
@@ -113,4 +113,4 @@ MonoBehaviour:
     Accuracy: 0.9
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
-    Icon: {fileID: 0}
+    Icon: {fileID: 21300000, guid: 427a7b2c0e8cb9f4e86784691e10827a, type: 3}
