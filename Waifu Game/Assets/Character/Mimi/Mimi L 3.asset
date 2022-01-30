@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillLevel: 1
   CurrentExperience: 0
   Name: Mimi
-  ChibiSpriteArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: 1b34c923098157149b6ef37c5f8e98cf, type: 3}
   SplashArt: {fileID: 21300000, guid: 98a6ea88a4983e7459468bcbf294a8be, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
@@ -32,6 +32,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 10
     - 10
@@ -53,6 +54,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 15
     - 16
@@ -74,6 +76,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 15
     - 16
@@ -98,6 +101,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 1
+    HitTwice: 0
     MinDamage:
     - 10
     - 11

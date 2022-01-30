@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillLevel: 0
   CurrentExperience: 0
   Name: Wiz
-  ChibiSpriteArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: 17584e90689ec9348880e02292e7e653, type: 3}
   SplashArt: {fileID: 21300000, guid: a90473eefbf8e5b4fb8de273ae413987, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
