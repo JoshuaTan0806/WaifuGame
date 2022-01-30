@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillLevel: 0
   CurrentExperience: 0
   Name: Rin
-  ChibiSpriteArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: e9f145a32ae92c7469198dcc62dabc15, type: 3}
   SplashArt: {fileID: 21300000, guid: 36d30fec134df3f4b8683ead3b48ee7b, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
   CardRarity: 1

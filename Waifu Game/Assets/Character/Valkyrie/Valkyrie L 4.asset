@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Valkyrie L 4
   m_EditorClassIdentifier: 
   Level: 1
-  SkillLevel: 1
+  SkillLevel: 0
   CurrentExperience: 0
   Name: Valkyrie
-  ChibiSpriteArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: a47bb6e6a10aa524cbb4b71a13a25e8e, type: 3}
   SplashArt: {fileID: 21300000, guid: 2f9794e906d3a814ba7934d651120a88, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
   CardRarity: 1
@@ -24,11 +24,11 @@ MonoBehaviour:
   Health: 120
   CurrentHealth: 120
   ActionSpeed: 4
-  CurrentActionSpeed: 2.0121827
+  CurrentActionSpeed: 0.46100107
   HealthGrowth: 4
   Skills:
   - Cooldown: 0
-    CurrentCooldown: 5.0032105
+    CurrentCooldown: 8.00457
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 15.0032015
+    CurrentCooldown: 18.004578
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     CriticalStrikeMultiplier: 1.25
     Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
   - Cooldown: 10
-    CurrentCooldown: 2.0121827
+    CurrentCooldown: 0.46100107
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0

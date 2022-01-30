@@ -16,7 +16,7 @@ MonoBehaviour:
   SkillLevel: 0
   CurrentExperience: 0
   Name: Valkyrie
-  ChibiSpriteArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 21300000, guid: a47bb6e6a10aa524cbb4b71a13a25e8e, type: 3}
   SplashArt: {fileID: 21300000, guid: 2f9794e906d3a814ba7934d651120a88, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9f8ce578420102443b708ad1ee73d652, type: 3}
   CardRarity: 2
