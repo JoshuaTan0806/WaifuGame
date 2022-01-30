@@ -20,6 +20,14 @@ public class EnemySelect : MonoBehaviour
             enemies[i] = Instantiate(got);
 
             enemies[i].Health = enemies[i].Health * 0.75f;
+
+            enemies[i].CurrentHealth = enemies[i].Health;
+
+            enemies[i].CurrentActionSpeed = 0;
+            foreach (Character.Skill s in enemies[i].Skills)
+            {
+                s.CurrentCooldown = 0;
+            }
         }
 
         //Buff them slightly?
