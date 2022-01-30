@@ -18,6 +18,8 @@ public class EnemySelect : MonoBehaviour
             got.SkillLevel = 1;
             //Instantiate it as an instance so we dont change the original
             enemies[i] = Instantiate(got);
+
+            enemies[i].Health = enemies[i].Health * 0.75f;
         }
 
         //Buff them slightly?
