@@ -15,7 +15,7 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Wiz
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: a90473eefbf8e5b4fb8de273ae413987, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
@@ -28,19 +28,20 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
+    - 100
+    - 100
+    - 100
+    - 100
     - 0
     MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
+    - 100
+    - 100
+    - 100
+    - 100
     - 0
     Accuracy: 1
     CriticalStrikeChance: 0.2
@@ -48,18 +49,19 @@ MonoBehaviour:
     Icon: {fileID: 0}
   - Cooldown: 10
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
-    - 0
-    - 0
-    - 0
+    - 100
+    - 100
+    - 100
     - 0
     - 0
     MaxDamage:
-    - 0
-    - 0
-    - 0
+    - 100
+    - 100
+    - 100
     - 0
     - 0
     Accuracy: 1
@@ -68,6 +70,7 @@ MonoBehaviour:
     Icon: {fileID: 0}
   - Cooldown: 10
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
     MinDamage:
@@ -91,6 +94,7 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:

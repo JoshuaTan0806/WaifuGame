@@ -163,6 +163,9 @@ public class Character : ScriptableObject
 
         public float CalculateDamage()
         {
+            if (SkillLevel <= 0)
+                SkillLevel = 1;
+
             float roll = Random.Range(0.0f, 1.0f);
             if(roll > Accuracy)
             {
@@ -186,7 +189,7 @@ public class Character : ScriptableObject
         UpdateTimers();
     }
 
-    public void StartCombat()
+    public void StartCombat(bool resetHealth)
     {
         for (int i = 0; i < Skills.Length; i++)
         {
@@ -195,9 +198,11 @@ public class Character : ScriptableObject
             Skills[i].isAlly = IsAlly();
         }
 
+        
         CurrentUltimateGauge = 0;
 
-        CurrentHealth = Health + (Level * HealthGrowth);
+        if(resetHealth)
+            CurrentHealth = Health + (Level * HealthGrowth);
     }
 
     public void TakeDamage(float Damage)
@@ -213,15 +218,22 @@ public class Character : ScriptableObject
     public void Win()
     {
         GameManager.instance.ResetEnemySkill();
+
+        AwardCurrency(Rarity.Common);
+
+        Battlefield.instance.nextWaveButton.gameObject.SetActive(true);
     }
 
     public void Lose()
     {
         GameManager.instance.ResetEnemySkill();
+
+        Battlefield.instance.mainMenuButton.gameObject.SetActive(true);
     }
 
     public void Die()
     {
+        //If an ally
         for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
         {
             if (this == Battlefield.instance.LeftCharacterPosition[i].character)
@@ -231,10 +243,13 @@ public class Character : ScriptableObject
             }
         }
 
+        //If an enemy
         for (int i = 0; i < Battlefield.instance.RightCharacterPosition.Length; i++)
         {
             if (this == Battlefield.instance.RightCharacterPosition[i].character)
             {
+                AwardCurrency(CardRarity);
+
                 Battlefield.instance.RightCharacterPosition[i].character = null;
                 break;
             }
@@ -274,6 +289,22 @@ public class Character : ScriptableObject
                     Debug.Log("Win");
                 }
             }
+        }
+    }
+
+    void AwardCurrency(Rarity r)
+    {
+        switch (r)
+        {
+            case Rarity.Common:
+                GameManager.instance.AddCurrency(15);
+                break;
+            case Rarity.Rare:
+                GameManager.instance.AddCurrency(40);
+                break;
+            case Rarity.SuperRare:
+                GameManager.instance.AddCurrency(100);
+                break;
         }
     }
 

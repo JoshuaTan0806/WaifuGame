@@ -10,7 +10,8 @@ public class CharSelector : MonoBehaviour
 
     [SerializeField] Button startButton;
 
-    EnemySelect enemySelect;
+    [HideInInspector]
+    public EnemySelect enemySelect;
 
     public static CharSelector instance;
     private void Awake()
@@ -52,7 +53,7 @@ public class CharSelector : MonoBehaviour
             enemySelect.SelectEnemies(charSlots[0].charInSlot, charSlots[1].charInSlot, charSlots[2].charInSlot);
 
             //Start the battle
-            Battlefield.instance.StartCombat();
+            Battlefield.instance.StartCombat(true);
         });
     }
 

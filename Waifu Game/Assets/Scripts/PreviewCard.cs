@@ -10,7 +10,7 @@ public class PreviewCard : MonoBehaviour
     public Image backGround;
     public Image splashArt;
     public TextMeshProUGUI titleTxt;
-    public TextMeshProUGUI levelTxt;
+    public TextMeshProUGUI skillLevelTxt;
 
     [Space]
 
@@ -25,7 +25,7 @@ public class PreviewCard : MonoBehaviour
         splashArt.sprite = SplashArt;
         titleTxt.SetText(title);
         if(LevelText != null)
-            levelTxt.SetText($"LVL:{LevelText}");
+            skillLevelTxt.SetText($"LVL:{LevelText}");
 
         fourStar.enabled = false;
         fiveStar.enabled = false;

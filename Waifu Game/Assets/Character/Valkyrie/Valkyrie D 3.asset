@@ -15,7 +15,7 @@ MonoBehaviour:
   Level: 1
   SkillLevel: 0
   Name: Valkyrie
-  ChibiArt: {fileID: 0}
+  ChibiSpriteArt: {fileID: 0}
   SplashArt: {fileID: 21300000, guid: 940309218cd7a384eb4c298f3262e985, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
   CardRarity: 0
@@ -28,6 +28,28 @@ MonoBehaviour:
   Skills:
   - Cooldown: 0
     CurrentCooldown: 13.906232
+    isAlly: 0
+    SkillLevel: 0
+    IsMultiAttack: 0
+    MinDamage:
+    - 100
+    - 100
+    - 100
+    - 0
+    - 0
+    MaxDamage:
+    - 100
+    - 100
+    - 100
+    - 0
+    - 0
+    Accuracy: 0.9
+    CriticalStrikeChance: 0.3
+    CriticalStrikeMultiplier: 1.25
+    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
+  - Cooldown: 10
+    CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
@@ -48,26 +70,7 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
   - Cooldown: 10
     CurrentCooldown: 13.906232
-    SkillLevel: 0
-    IsMultiAttack: 0
-    MinDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    MaxDamage:
-    - 0
-    - 0
-    - 0
-    - 0
-    - 0
-    Accuracy: 0.9
-    CriticalStrikeChance: 0.3
-    CriticalStrikeMultiplier: 1.25
-    Icon: {fileID: 21300000, guid: 0c7fa3bbef0666b4aa496c10a2b91ab3, type: 3}
-  - Cooldown: 10
-    CurrentCooldown: 13.906232
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:
@@ -91,6 +94,7 @@ MonoBehaviour:
   Ultimate:
     Cooldown: 0
     CurrentCooldown: 0
+    isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
     MinDamage:

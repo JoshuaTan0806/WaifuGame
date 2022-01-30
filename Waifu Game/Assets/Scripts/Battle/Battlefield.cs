@@ -19,6 +19,11 @@ public class Battlefield : MonoBehaviour
     public Image[] FadedSkills;
     public Image FadedUltimate;
 
+    [Header("UI")]
+
+    public Button nextWaveButton;
+    public Button mainMenuButton;
+
     private void Awake()
     {
         if(instance == null)
@@ -35,7 +40,12 @@ public class Battlefield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCombat();
+        nextWaveButton.onClick.AddListener(delegate { CharSelector.instance.enemySelect.SelectEnemies(); StartCombat(false); });
+
+        mainMenuButton.onClick.AddListener(() => MainViewUI.instance.SwitchView(gameObject, MainViewUI.instance.gameObject));
+
+        nextWaveButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -74,8 +84,11 @@ public class Battlefield : MonoBehaviour
         }
     }
 
-    public void StartCombat()
+    public void StartCombat(bool resetAllyHealth)
     {
+        nextWaveButton.gameObject.SetActive(false);
+        mainMenuButton.gameObject.SetActive(false);
+
         LeftCharacterPosition[0].SelectCharacter();
         RightCharacterPosition[0].SelectCharacter();
 
@@ -88,7 +101,7 @@ public class Battlefield : MonoBehaviour
                     //if (LeftCharacterPosition[i].character.ChibiArt != null)
                     //    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
 
-                    LeftCharacterPosition[i].character.StartCombat();
+                    LeftCharacterPosition[i].character.StartCombat(resetAllyHealth);
                 }
             }
         }
@@ -104,7 +117,7 @@ public class Battlefield : MonoBehaviour
 
 
 
-                    RightCharacterPosition[i].character.StartCombat();
+                    RightCharacterPosition[i].character.StartCombat(resetAllyHealth);
                 }
             }
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemySelect : MonoBehaviour
 {
-    public void SelectEnemies(Character ally1, Character ally2, Character ally3)
+    public void SelectEnemies(Character ally1 = null, Character ally2 = null, Character ally3 = null)
     {
         GameManager.instance.ResetEnemySkill();
 

@@ -54,6 +54,11 @@ public class GameManager : MonoBehaviour
         currency = PlayerPrefs.GetInt("Currency");
     }
 
+    public void AddCurrency(int amount)
+    {
+        currency += amount;
+    }
+
     private void OnApplicationQuit()
     {
         PlayerPrefs.SetInt("Currency", currency);
