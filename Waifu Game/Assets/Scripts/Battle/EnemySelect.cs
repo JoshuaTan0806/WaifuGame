@@ -19,7 +19,7 @@ public class EnemySelect : MonoBehaviour
             //Instantiate it as an instance so we dont change the original
             enemies[i] = Instantiate(got);
 
-            enemies[i].Health = enemies[i].Health * 0.75f;
+            enemies[i].Health = enemies[i].Health * 0.7f;
 
             enemies[i].CurrentHealth = enemies[i].Health;
 
