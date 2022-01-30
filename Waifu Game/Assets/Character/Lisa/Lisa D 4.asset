@@ -32,6 +32,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 9
     - 9
@@ -53,27 +54,29 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
+    HitTwice: 1
     MinDamage:
-    - 14
-    - 15
-    - 15
-    - 16
-    - 17
+    - 7
+    - 8
+    - 8
+    - 9
+    - 10
     MaxDamage:
-    - 16
-    - 17
-    - 18
-    - 19
-    - 20
+    - 8
+    - 9
+    - 9
+    - 10
+    - 11
     Accuracy: 0.9
     CriticalStrikeChance: 0.5
     CriticalStrikeMultiplier: 1.25
-    Icon: {fileID: 21300000, guid: 6b47a75a0bcb062458d8201fc0deed76, type: 3}
+    Icon: {fileID: 21300000, guid: 329bf641a41d8cd4c86bb79c176a6328, type: 3}
   - Cooldown: 10
     CurrentCooldown: 4.955021
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
+    HitTwice: 0
     MinDamage:
     - 9
     - 9
@@ -98,6 +101,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
+    HitTwice: 0
     MinDamage:
     - 16
     - 16

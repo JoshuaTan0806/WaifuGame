@@ -47,6 +47,7 @@ public class Character : ScriptableObject
         public bool isAlly;
         public int SkillLevel;
         public bool IsMultiAttack;
+        public bool HitTwice;
         public float[] MinDamage = new float[5];
         public float[] MaxDamage = new float[5];
         [Range(0,1)] public float Accuracy;
@@ -81,6 +82,11 @@ public class Character : ScriptableObject
                             }
 
                             Battlefield.instance.RightCharacterPosition[i].character.TakeDamage(damage);
+
+                            if (HitTwice)
+                            {
+                                GameManager.instance.StartCoroutine(HitsTwice(Battlefield.instance.RightCharacterPosition[i]));
+                            }
                         }
                     }
                 }
@@ -101,6 +107,11 @@ public class Character : ScriptableObject
                             {
                                 Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
                                 Battlefield.instance.RightCharacterPosition[i].DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                            }
+
+                            if (HitTwice)
+                            {
+                                GameManager.instance.StartCoroutine(HitsTwice(Battlefield.instance.RightCharacterPosition[i]));
                             }
                         }
                     }
@@ -130,6 +141,11 @@ public class Character : ScriptableObject
                             }
 
                             Battlefield.instance.LeftCharacterPosition[i].character.TakeDamage(damage);
+
+                            if (HitTwice)
+                            {
+                                GameManager.instance.StartCoroutine(HitsTwice(Battlefield.instance.LeftCharacterPosition[i]));
+                            }
                         }
                     }
                 }
@@ -160,7 +176,32 @@ public class Character : ScriptableObject
                     }
 
                     Battlefield.instance.LeftCharacterPosition[CharacterToAttack].character.TakeDamage(damage);
+
+                    GameManager.instance.StartCoroutine(HitsTwice(Battlefield.instance.LeftCharacterPosition[CharacterToAttack]));
                 }
+            }
+
+            IEnumerator HitsTwice(Spot spot)
+            {
+                yield return new WaitForSeconds(0.2f);
+
+                if (spot.character == null)
+                    yield break;
+
+                float damage = CalculateDamage();
+
+                if (damage == 0)
+                {
+                    spot.DamageValue.GetComponent<TextMeshProUGUI>().text = "Miss";
+                    spot.DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                }
+                else
+                {
+                    spot.DamageValue.GetComponent<TextMeshProUGUI>().text = Mathf.RoundToInt(damage).ToString();
+                    spot.DamageValue.GetComponent<DamageValue>().ResetAlpha();
+                }
+
+                spot.character.TakeDamage(damage);
             }
         }
 

@@ -32,6 +32,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
+    HitTwice: 0
     MinDamage:
     - 6
     - 7
@@ -53,6 +54,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 16
     - 16
@@ -74,6 +76,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 18
     - 18
@@ -98,18 +101,19 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 1
+    HitTwice: 1
     MinDamage:
-    - 14
-    - 15
-    - 16
-    - 17
-    - 18
+    - 5
+    - 5
+    - 5
+    - 5
+    - 10
     MaxDamage:
-    - 20
-    - 20
-    - 50
-    - 50
-    - 50
+    - 7
+    - 7
+    - 7
+    - 7
+    - 15
     Accuracy: 1
     CriticalStrikeChance: 0
     CriticalStrikeMultiplier: 1
