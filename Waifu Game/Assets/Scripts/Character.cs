@@ -205,7 +205,6 @@ public class Character : ScriptableObject
 
         Ultimate.isAlly = IsAlly();
         Ultimate.SkillLevel = SkillLevel;
-        CurrentUltimateGauge = 0;
 
         if(resetHealth)
             CurrentHealth = Health + (Level * HealthGrowth);
@@ -226,10 +225,17 @@ public class Character : ScriptableObject
         GameManager.instance.ResetEnemySkill();
 
         AwardCurrency(Rarity.Common);
-        Level++;
 
-        if (Level >= MaxLevel)
-            Level = MaxLevel;
+        for (int i = 0; i < Battlefield.instance.LeftCharacterPosition.Length; i++)
+        {
+            if(Battlefield.instance.LeftCharacterPosition[i].character != null)
+            {
+                Level++;
+
+                if (Level >= MaxLevel)
+                    Level = MaxLevel;
+            }
+        }
 
         Battlefield.instance.nextWaveButton.gameObject.SetActive(true);
     }
