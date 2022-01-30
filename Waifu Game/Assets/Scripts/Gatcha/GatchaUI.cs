@@ -65,6 +65,8 @@ public class GatchaUI : MonoBehaviour
     {
         HideCardPreview();
 
+        notificationObj.SetActive(false);
+
         if (GameManager.instance.currency - GatchaController.instance.rollGatchaCost < 0)
         {
             //Cannot afford rolling
