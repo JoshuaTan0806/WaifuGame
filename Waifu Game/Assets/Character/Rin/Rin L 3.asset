@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Rin L 3
   m_EditorClassIdentifier: 
   Level: 1
-  SkillLevel: 0
+  SkillLevel: 1
   CurrentExperience: 0
   Name: Rin
   ChibiSpriteArt: {fileID: 21300000, guid: 7cd4888e66f81c943ab1440e60b4f8e1, type: 3}
   SplashArt: {fileID: 21300000, guid: 90baa1af6aa120a40a0f23fe47c5ccaa, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9d664c2d92e35a941a1fa46afc8893a1, type: 3}
-  CardRarity: 0
+  CardRarity: 3
   CardFaction: 0
   Health: 115
   CurrentHealth: -3.1528711
@@ -32,6 +32,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 5
     - 6
@@ -53,6 +54,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 13
     - 14
@@ -74,6 +76,7 @@ MonoBehaviour:
     isAlly: 1
     SkillLevel: 1
     IsMultiAttack: 1
+    HitTwice: 0
     MinDamage:
     - 4
     - 4
@@ -98,6 +101,7 @@ MonoBehaviour:
     isAlly: 0
     SkillLevel: 0
     IsMultiAttack: 0
+    HitTwice: 0
     MinDamage:
     - 0
     - 0

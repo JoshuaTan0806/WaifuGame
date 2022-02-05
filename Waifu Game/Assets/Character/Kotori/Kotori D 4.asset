@@ -19,7 +19,7 @@ MonoBehaviour:
   ChibiSpriteArt: {fileID: 21300000, guid: 0fad40eeba8d6ed4cafce38e7c268a7f, type: 3}
   SplashArt: {fileID: 21300000, guid: eaf24c6ee3e7155499973cadc6d6f76d, type: 3}
   SplashBackground: {fileID: 21300000, guid: e2185181d1ef20942a887e8be95698ce, type: 3}
-  CardRarity: 1
+  CardRarity: 4
   CardFaction: 1
   Health: 110
   CurrentHealth: 100

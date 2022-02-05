@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4374b5f6c2a213a448450163f6b0d0d1, type: 3}
   m_Name: Kotori L 5
   m_EditorClassIdentifier: 
-  Level: 2
-  SkillLevel: 5
+  Level: 1
+  SkillLevel: 0
   CurrentExperience: 0
   Name: Kotori
   ChibiSpriteArt: {fileID: 21300000, guid: d5bb13b5d6bd47e4f9feac685267860d, type: 3}
   SplashArt: {fileID: 21300000, guid: 354893f90e057274ba2fc90201695fa1, type: 3}
   SplashBackground: {fileID: 21300000, guid: 9f8ce578420102443b708ad1ee73d652, type: 3}
-  CardRarity: 2
+  CardRarity: 5
   CardFaction: 0
   Health: 130
   CurrentHealth: 15.09465

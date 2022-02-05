@@ -11,9 +11,9 @@ public enum Faction
 
 public enum Rarity
 {
-    Common,
-    Rare,
-    SuperRare
+    Common = 3,
+    Rare = 4,
+    SuperRare = 5
 }
 
 public class GameManager : MonoBehaviour

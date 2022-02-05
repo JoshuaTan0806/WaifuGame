@@ -26,13 +26,32 @@ public class CharacterDisplayer : MonoBehaviour
     [SerializeField] TMP_Dropdown sortByDropdown;
     SortType sortType = SortType.none;
 
+
+    List<Filter> currentFilters = new List<Filter>();
+    //public Dictionary<Filter, bool> currentFilters = new Dictionary<Filter, bool>();
+
+    #region Filters
+    public void AddFilter(Filter t)
+    {
+        if (currentFilters.Contains(t) == false)
+            currentFilters.Add(t);
+    }
+    public void RemoveFilter(Filter t)
+    {
+        if (currentFilters.Contains(t))
+            currentFilters.Remove(t);
+    }
+    #endregion
+
     private void Start()
     {
-        backButton.onClick.AddListener(() => {
+        backButton.onClick.AddListener(() =>
+        {
             MainViewUI.instance?.SwitchView(gameObject, MainViewUI.instance.gameObject);
-            Depopulate(); });
+            Depopulate();
+        });
 
-        sortByDropdown.onValueChanged.AddListener(delegate 
+        sortByDropdown.onValueChanged.AddListener(delegate
         {
             sortType = (SortType)sortByDropdown.value;
 
@@ -47,7 +66,7 @@ public class CharacterDisplayer : MonoBehaviour
         //Populate the cardHolder
         PopulateCards();
     }
-    void PopulateCards()
+    public void PopulateCards()
     {
         if (!GameManager.instance)
             return;
@@ -56,6 +75,22 @@ public class CharacterDisplayer : MonoBehaviour
 
         //Create a list from everyCharacter that only has skillLevel > 0
         List<Character> unlockedCharacters = GameManager.instance.everyCharacter.Where(e => e.SkillLevel > 0).ToList();
+
+        //Filter the list by our filters
+        foreach (Filter f in currentFilters)
+        {
+            //Get our filter type
+            switch (f.FilterT)
+            {
+                case Filter.FilterType.stars:
+                    //Only keep cards that do NOT have the rarity of this
+                    Debug.Log((int)Rarity.Common);
+                    Debug.Log((int)unlockedCharacters[0].CardRarity);
+
+                    unlockedCharacters = unlockedCharacters.Where(e => (int)e.CardRarity != f.Value).ToList();
+                    break;
+            }
+        }
 
         //Sort the list by what we currently want to sort by
         switch (sortType)
@@ -67,7 +102,7 @@ public class CharacterDisplayer : MonoBehaviour
                 unlockedCharacters = unlockedCharacters.OrderBy(e => e.Level).ThenBy(e => e.Name).ToList();
                 break;
             case SortType.rarity:
-                unlockedCharacters = unlockedCharacters.OrderBy(e => e.CardRarity).ThenBy(e => e.Name).ToList();
+                unlockedCharacters = unlockedCharacters.OrderByDescending(e => e.CardRarity).ThenBy(e => e.Name).ToList();
                 break;
         }
 
@@ -91,7 +126,7 @@ public class CharacterDisplayer : MonoBehaviour
     {
         List<GameObject> deathList = new List<GameObject>();
 
-        for(int i = 0; i < cardHolder.childCount; i++)
+        for (int i = 0; i < cardHolder.childCount; i++)
         {
             deathList.Add(cardHolder.GetChild(i).gameObject);
         }
