@@ -21,9 +21,12 @@ public class Spot : MonoBehaviour
 
     public Image arrow;
 
+    Animator animator;
+
     private void Awake()
     {
         chibiSprite = GetComponent<Image>();
+        animator = GetComponent<Animator>();
     }
 
     public void SelectCharacter()
@@ -82,5 +85,10 @@ public class Spot : MonoBehaviour
         {
             arrow.gameObject.SetActive(false);
         }
+    }
+
+    public void Jump()
+    {
+        animator.SetTrigger("Jump");
     }
 }

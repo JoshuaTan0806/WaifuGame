@@ -105,7 +105,7 @@ public class Battlefield : MonoBehaviour
                     //if (LeftCharacterPosition[i].character.ChibiArt != null)
                     //    Instantiate(LeftCharacterPosition[i].character.ChibiArt, LeftCharacterPosition[i].transform.position, Quaternion.Euler(0, 0, 0));
 
-                    LeftCharacterPosition[i].character.StartCombat(resetAllyHealth);
+                    LeftCharacterPosition[i].character.StartCombat(resetAllyHealth, LeftCharacterPosition[i]);
                 }
             }
         }
@@ -121,7 +121,7 @@ public class Battlefield : MonoBehaviour
 
 
 
-                    RightCharacterPosition[i].character.StartCombat(resetAllyHealth);
+                    RightCharacterPosition[i].character.StartCombat(resetAllyHealth, RightCharacterPosition[i]);
                 }
             }
         }

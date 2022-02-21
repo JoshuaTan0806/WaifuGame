@@ -39,6 +39,9 @@ public class Character : ScriptableObject
     [HideInInspector] public float CurrentUltimateGauge;
     public Skill Ultimate;
 
+    //Set when starting combat
+    private Spot spot;
+
     [System.Serializable]
     public class Skill
     {
@@ -233,8 +236,10 @@ public class Character : ScriptableObject
         UpdateTimers();
     }
 
-    public void StartCombat(bool resetHealth)
+    public void StartCombat(bool resetHealth, Spot spot)
     {
+        this.spot = spot;
+
         for (int i = 0; i < Skills.Length; i++)
         {
             Skills[i].CurrentCooldown = Skills[i].Cooldown;
@@ -383,6 +388,7 @@ public class Character : ScriptableObject
     {
         if (CurrentActionSpeed >= ActionSpeed && Skills[SkillNumber].CurrentCooldown >= Skills[SkillNumber].Cooldown)
         {
+            spot?.Jump();
             Skills[SkillNumber].UseSkill();
             CurrentActionSpeed = 0;
             GainUltimateGauge();
@@ -393,6 +399,7 @@ public class Character : ScriptableObject
     {
         if (CurrentActionSpeed >= ActionSpeed && CurrentUltimateGauge >= UltimateGauge)
         {
+            spot?.Jump();
             CurrentActionSpeed = 0;
             CurrentUltimateGauge = 0;
             Ultimate.UseSkill();
