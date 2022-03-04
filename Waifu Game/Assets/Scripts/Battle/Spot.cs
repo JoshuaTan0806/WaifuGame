@@ -58,8 +58,16 @@ public class Spot : MonoBehaviour
         if (character != null)
         {
             character.Update();
-            ActionSpeedTimer.fillAmount = character.CurrentActionSpeed / character.ActionSpeed;
+
+            var abilityCooldown = character.CurrentActionSpeed / character.ActionSpeed;
+
+            ActionSpeedTimer.color = abilityCooldown >= 1 ? new Color(0,1,0,1) : new Color(1,1,1,1);
+            ActionSpeedTimer.fillAmount = abilityCooldown;
             CurrentHealth.fillAmount = character.CurrentHealth / (character.Health + (character.Level * character.HealthGrowth));
+
+            //Freeze time if our ability is ready
+            if (Ally && abilityCooldown >= 1)
+                Battlefield.instance.SetBattleState(true);
         }
         else
         {

@@ -24,6 +24,10 @@ public class Battlefield : MonoBehaviour
     public Button nextWaveButton;
     public Button mainMenuButton;
 
+    [Space]
+
+    public GameObject pauseNotifier;
+
     private void Awake()
     {
         if(instance == null)
@@ -130,10 +134,21 @@ public class Battlefield : MonoBehaviour
     public void UseSkill(int SkillNumber)
     {
         SelectedAlly.UseSkill(SkillNumber);
+
+        SetBattleState(false);
     }
 
     public void UseUltimate()
     {
         SelectedAlly.UseUltimate();
+
+        SetBattleState(false);
+    }
+
+    public void SetBattleState(bool paused)
+    {
+        Time.timeScale = paused ? 0 : 1;
+
+        pauseNotifier?.SetActive(paused);
     }
 }
